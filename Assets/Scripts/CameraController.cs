@@ -78,7 +78,7 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         GetKeyboardMovement();
-        if(useScreenEdge)
+        if(useScreenEdge && Application.isFocused)
             CheckMouseAtScreenEdge();
         
         DragCamera();

@@ -8,7 +8,7 @@ namespace WorldTree.Core
     public class SOUnit : ScriptableObject
     {
         public string unitName;
-        public UnitType type;
+        public Faction type;
         public int cost;
         
         public float moveSpeed;
