@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Update = UnityEngine.PlayerLoop.Update;
 
 public class CameraController : MonoBehaviour
 {
@@ -129,7 +126,7 @@ public class CameraController : MonoBehaviour
         if (targetPosition.sqrMagnitude > 0.1f)
         {
             speed = Mathf.Lerp(speed, maxSpeed, Time.deltaTime * acceleration);
-            transform.position += targetPosition * speed * Time.deltaTime;
+            transform.position += targetPosition * speed * speedByZoom.Evaluate((zoomHeight - minHeight) / (maxHeight - minHeight)) * Time.deltaTime;
         }
         else
         {
