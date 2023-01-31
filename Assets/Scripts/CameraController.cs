@@ -189,20 +189,25 @@ public class CameraController : MonoBehaviour
 
     private void DragCamera()
     {
-        if(!Mouse.current.rightButton.isPressed)
-            return;
 
-        Plane plane = new Plane(Vector3.up, Vector3.zero);
-        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-
-        if(plane.Raycast(ray, out float distance))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (Mouse.current.rightButton.wasPressedThisFrame)
-                startDrag = ray.GetPoint(distance);
-            else
-                targetPosition += startDrag - ray.GetPoint(distance);
+            if(!Mouse.current.rightButton.isPressed)
+                return;
 
+            Plane plane = new Plane(Vector3.up, Vector3.zero);
+            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+
+            if(plane.Raycast(ray, out float distance))
+            {
+                if (Mouse.current.rightButton.wasPressedThisFrame)
+                    startDrag = ray.GetPoint(distance);
+                else
+                    targetPosition += startDrag - ray.GetPoint(distance);
+
+            }
         }
+        
     }
     
 }
