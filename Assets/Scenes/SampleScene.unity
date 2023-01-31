@@ -543,6 +543,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
+  speedByZoom:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 4.8961067
+      outSlope: 4.8961067
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.18160377
+    - serializedVersion: 3
+      time: 1
+      value: 20
+      inSlope: 2.7550974
+      outSlope: 2.7550974
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.115566015
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   acceleration: 10
   damping: 15
   stepSize: 2
