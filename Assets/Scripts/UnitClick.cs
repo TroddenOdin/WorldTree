@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitClick : MonoBehaviour
 {
-    private Camera myCam;
+    private Camera _myCam;
+    public GameObject groundMarker;
 
     public LayerMask clickable;
 
@@ -13,7 +12,7 @@ public class UnitClick : MonoBehaviour
     
     void Start()
     {
-        myCam = Camera.main;
+        _myCam = Camera.main;
     }
 
     
@@ -22,7 +21,7 @@ public class UnitClick : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-            Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
+            Ray ray = _myCam.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, clickable))
             {
@@ -58,5 +57,7 @@ public class UnitClick : MonoBehaviour
 
 
         }
+
     }
+    
 }
