@@ -10,7 +10,8 @@ namespace WorldTree
         public static UnitMovement Instance => _instance;
         Camera cam;
         public LayerMask ground;
-        public static List<NavMeshAgent> meshAgents = new List<NavMeshAgent>();
+        public static List<Unit> units = new();
+        private static List<UnitNavMode> agentModes = new();
 
         private void Start()
         {
@@ -35,19 +36,21 @@ namespace WorldTree
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
             {
-                foreach(var agent in meshAgents)
+                for(int i = 0; i < units.Count; ++i)
                 {
-                    if(UnitSelections.Instance.unitsSelected.Contains(agent.gameObject))
-                        agent.SetDestination(hit.point);
+                    if (UnitSelections.Instance.unitsSelected.Contains(units[i].gameObject) && agentModes[i] == UnitNavMode.Selection)
+                        units[i].meshAgent.SetDestination(hit.point);
                 }
 
                 int countOnCircle = Mathf.FloorToInt(360 / stepAngle);
                 float randomizeAngle = Random.Range(0, stepAngle);
-                for (int i = 0; i < meshAgents.Count; ++i)
+                for (int i = 0; i < units.Count; ++i)
                 {
+                    if (!UnitSelections.Instance.unitsSelected.Contains(units[i].gameObject)) continue;
+
                     var vec = Vector3.forward;
                     vec = Quaternion.Euler(0, stepAngle * (countOnCircle - 1) + randomizeAngle, 0) * vec;
-                    meshAgents[i].SetDestination(meshAgents[i].destination + vec * (meshAgents[0].radius + meshAgents[i].radius + 0.5f) * step);
+                    units[i].meshAgent.SetDestination(units[i].meshAgent.destination + vec * (units[0].meshAgent.radius + units[i].meshAgent.radius + 0.5f) * step);
                     countOnCircle--;
                     i++;
                     if (countOnCircle == 0)
@@ -64,12 +67,13 @@ namespace WorldTree
 
         private void OnDisable()
         {
-            meshAgents.Clear();
+            units.Clear();
         }
 
         public void AddMeshAgent(Unit unit)
         {
-            meshAgents.Add(unit.GetComponent<NavMeshAgent>());
+            UnitMovement.units.Add(unit);
+            agentModes.Add(UnitNavMode.Selection);
         }
     }
 }
