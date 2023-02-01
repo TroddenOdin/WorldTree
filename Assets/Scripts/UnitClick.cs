@@ -3,11 +3,12 @@ using UnityEngine;
 public class UnitClick : MonoBehaviour
 {
     private Camera _myCam;
-    public GameObject groundMarker;
 
-    public LayerMask clickable;
+    [SerializeField]
+    private LayerMask clickable;
 
-    public LayerMask ground;
+    [SerializeField]
+    private LayerMask ground;
     
     
     void Start()

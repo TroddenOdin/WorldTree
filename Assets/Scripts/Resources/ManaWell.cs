@@ -8,7 +8,7 @@ namespace WorldTree.Core
 public class ManaWell : ScriptableObject
 {
         public string wellName;
-        public UnitType unit;
+        public Faction unit;
 
 
 
