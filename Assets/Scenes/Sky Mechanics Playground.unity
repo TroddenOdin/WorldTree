@@ -441,7 +441,6 @@ GameObject:
   - component: {fileID: 1076975759}
   - component: {fileID: 1076975758}
   - component: {fileID: 1076975757}
-  - component: {fileID: 1076975756}
   m_Layer: 0
   m_Name: Civ
   m_TagString: Untagged
@@ -449,20 +448,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1076975756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076975755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b0950fad873e547acfbc62df5a5bc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wellName: 
-  unit: 0
 --- !u!65 &1076975757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -553,7 +538,6 @@ GameObject:
   - component: {fileID: 1235419569}
   - component: {fileID: 1235419568}
   - component: {fileID: 1235419567}
-  - component: {fileID: 1235419571}
   m_Layer: 0
   m_Name: Neutral
   m_TagString: Untagged
@@ -639,20 +623,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1235419571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235419566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b0950fad873e547acfbc62df5a5bc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wellName: 
-  unit: 0
 --- !u!1 &1286809094
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +635,6 @@ GameObject:
   - component: {fileID: 1286809098}
   - component: {fileID: 1286809097}
   - component: {fileID: 1286809096}
-  - component: {fileID: 1286809095}
   m_Layer: 0
   m_Name: Nature
   m_TagString: Untagged
@@ -673,20 +642,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1286809095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286809094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b0950fad873e547acfbc62df5a5bc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wellName: 
-  unit: 0
 --- !u!65 &1286809096
 BoxCollider:
   m_ObjectHideFlags: 0
