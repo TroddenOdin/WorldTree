@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace WorldTree
 {
+    [RequireComponent(typeof(NavMeshAgent))]
     public class Unit : MonoBehaviour, IDamageable
     {
         [SerializeField]
@@ -11,6 +13,7 @@ namespace WorldTree
         private void Start()
         {
             UnitSelections.Instance.unitList.Add(this.gameObject);
+            UnitMovement.Instance.AddMeshAgent(this);
         }
 
 
