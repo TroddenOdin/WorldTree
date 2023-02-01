@@ -17,8 +17,8 @@ GameObject:
   m_Name: MountainCell
   m_TagString: Mountain
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 6
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1082328481900871593
 Transform:
