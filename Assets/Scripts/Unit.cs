@@ -4,13 +4,17 @@ namespace WorldTree
 {
     public class Unit : MonoBehaviour, IDamageable
     {
-        void Start()
+        [SerializeField]
+        private SOUnit _stats;
+        public SOUnit stats => _stats;
+
+        private void Start()
         {
             UnitSelections.Instance.unitList.Add(this.gameObject);
         }
 
 
-        void OnDestroy()
+        private void OnDestroy()
         {
             UnitSelections.Instance.unitList.Remove(this.gameObject);
         }
