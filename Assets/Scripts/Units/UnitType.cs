@@ -4,6 +4,7 @@
     public enum UnitType
     {
         Nature,
-        Civilization
+        Civilization,
+        Neutral
     }
 }
