@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
                 buildingMenu);
             string code = Globals.BUILDING_DATA[i].Code;
             button.name = code;
-            button.transform.Find("Text").GetComponent<Text>().text = "test";
+            button.transform.Find("Text").GetComponent<Text>().text = code;
             Button b = button.GetComponent<Button>();
             _AddBuildingButtonListener(b, i);
         }

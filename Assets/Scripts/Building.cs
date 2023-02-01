@@ -23,30 +23,26 @@ public class Building
 
     public Building(BuildingData data)
     {
+        GameObject g = GameObject.Instantiate(Resources.Load($"Prefabs/Buildings/{data.Code}")
+        ) as GameObject;
+        _transform = g.transform;
+
+        _placement = BuildingPlacement.Valid;
+        _buildingManager = g.GetComponent<BuildingManager>();
+        _placement = BuildingPlacement.Valid;
         _data = data;
         _currentHealth = data.HP;
         _materials = new List<Material>();
-        
         foreach (Material material in _transform.Find("Mesh").GetComponent<Renderer>().materials)
         {
             _materials.Add(new Material(material));
         }
-        
-        GameObject g = GameObject.Instantiate(Resources.Load($"Prefabs/Buildings/{_data.Code}"))
-            as GameObject;
-
-        
-        
-        _transform = g.transform;
-
-        _buildingManager = g.GetComponent<BuildingManager>();
-        
-
-        // set building mode as VALID
-        _placement = BuildingPlacement.Valid;
-        
         SetMaterials();
     }
+    
+    
+    
+    
 
     public void SetMaterials() { SetMaterials(_placement); }
 

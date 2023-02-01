@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using WorldTree;
+using UnityEngine.EventSystems;
 
 public class BuildingPlacer : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class BuildingPlacer : MonoBehaviour
                 _lastPlacementPosition = _raycastHit.point;
             }
 
-            if (_placedBuilding.HasValidPlacement && Mouse.current.leftButton.isPressed)
+            if (_placedBuilding.HasValidPlacement && Mouse.current.leftButton.isPressed && !EventSystem.current.IsPointerOverGameObject())
             {
                 //place building
                 _PlaceBuilding();
