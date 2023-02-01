@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1082328481900871591}
   - component: {fileID: 2195088410754039464}
   - component: {fileID: 7853077264946880607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlainsCell
-  m_TagString: Untagged
+  m_TagString: Plains
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,3 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3e586012271744f96e1d0b3eda0b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _type: 0

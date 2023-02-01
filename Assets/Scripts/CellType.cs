@@ -1,4 +1,4 @@
-﻿namespace WorldTree.Map
+﻿namespace WorldTree
 {
     public enum CellType
     {
