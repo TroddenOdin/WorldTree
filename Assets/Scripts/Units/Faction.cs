@@ -4,6 +4,7 @@
     public enum Faction
     {
         Nature,
-        Civilization
+        Civilization,
+        Neutral
     }
 }
