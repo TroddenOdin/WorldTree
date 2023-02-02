@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UnitSelections : MonoBehaviour
 {
-    public List<GameObject> unitList = new List<GameObject>();
-    public List<GameObject> unitsSelected = new List<GameObject>();
+    public List<GameObject> unitList = new();
+    public List<GameObject> unitsSelected = new();
 
     private static UnitSelections _instance;
     public static UnitSelections Instance
