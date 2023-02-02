@@ -15,7 +15,10 @@ namespace WorldTree
         
         public float attackPower;
         public float attackSpeed;
-        
+
+        public float agressionRadius = 10;
+        public float attackRadius = 2;
+
         public float health;
     }
 }
