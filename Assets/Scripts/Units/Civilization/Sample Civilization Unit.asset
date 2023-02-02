@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b75f63ffc508c8445b898fa3d0801b43, type: 3}
   m_Name: Sample Civilization Unit
   m_EditorClassIdentifier: 
-  unitName: 
+  unitName: SampleC
   type: 1
   cost: 0
-  moveSpeed: 0
-  attackPower: 0
-  attackSpeed: 0
-  health: 0
+  moveSpeed: 5
+  attackPower: 10
+  attackSpeed: 2
+  agressionRadius: 10
+  attackRadius: 2
+  health: 50
