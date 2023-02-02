@@ -2,66 +2,74 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
  
-public class UnitMovement : MonoBehaviour
+namespace WorldTree
 {
-    Camera cam;
-    NavMeshAgent myAgent;
-    public LayerMask ground;
-    public static List<NavMeshAgent> meshAgents = new List<NavMeshAgent>();
- 
-    void Start()
+    public class UnitMovement : MonoBehaviour
     {
-        cam = Camera.main;
-        myAgent = GetComponent<NavMeshAgent>();
-        meshAgents.Add(myAgent);
-    }
- 
-    void Update()
-    {
-        if(!meshAgents.Contains(myAgent))
+        private static UnitMovement _instance;
+        public static UnitMovement Instance => _instance;
+        Camera cam;
+        public LayerMask ground;
+        public static List<NavMeshAgent> meshAgents = new List<NavMeshAgent>();
+
+        private void Start()
         {
-            meshAgents.Add(myAgent);
+            if (_instance == null)
+                _instance = this;
+            else
+                Destroy(this);
+
+            cam = Camera.main;
         }
 
-        if (!(Input.GetMouseButtonDown(1) && meshAgents.Contains(myAgent))) return;
-
-        if (meshAgents.IndexOf(myAgent) != 0) return;
-
-        RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
- 
-        if(Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
-        {
-                myAgent.SetDestination(hit.point);
-        }
- 
-        float angle = 60; // angular step
-        int countOnCircle = (int)(360 / angle); // max number in one round
-        int count = meshAgents.Count; // number of agents
+        //cached for function
+        float stepAngle = 60; // angular step// max number in one round
         float step = 1; // circle number
-        int i = 1; // agent serial number
-        float randomizeAngle = Random.Range(0, angle);
-        while (count > 1)
+        private void Update()
         {
-            var vec = Vector3.forward;
-            vec = Quaternion.Euler(0, angle * (countOnCircle - 1) + randomizeAngle, 0) * vec;
-            meshAgents[i].SetDestination(myAgent.destination + vec * (myAgent.radius + meshAgents[i].radius + 0.5f) * step);
-            countOnCircle--;
-            count--;
-            i++;
-            if(countOnCircle == 0)
+
+            if (!Input.GetMouseButtonDown(1)) return;
+
+            RaycastHit hit;
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
             {
-                if(step != 3 && step != 4 && step < 6 || step == 10) { angle /= 2f; }
-                         
-                countOnCircle = (int)(360 / angle);
-                step++;
-                randomizeAngle = Random.Range(0, angle);
+                foreach(var agent in meshAgents)
+                {
+                    if(UnitSelections.Instance.unitsSelected.Contains(agent.gameObject))
+                        agent.SetDestination(hit.point);
+                }
+
+                int countOnCircle = Mathf.FloorToInt(360 / stepAngle);
+                float randomizeAngle = Random.Range(0, stepAngle);
+                for (int i = 0; i < meshAgents.Count; ++i)
+                {
+                    var vec = Vector3.forward;
+                    vec = Quaternion.Euler(0, stepAngle * (countOnCircle - 1) + randomizeAngle, 0) * vec;
+                    meshAgents[i].SetDestination(meshAgents[i].destination + vec * (meshAgents[0].radius + meshAgents[i].radius + 0.5f) * step);
+                    countOnCircle--;
+                    i++;
+                    if (countOnCircle == 0)
+                    {
+                        if (step != 3 && step != 4 && step < 6 || step == 10) { stepAngle /= 2f; }
+
+                        countOnCircle = (int)(360 / stepAngle);
+                        step++;
+                        randomizeAngle = Random.Range(0, stepAngle);
+                    }
+                }
             }
         }
-    }
 
-    void OnDisable() 
-    {
-       meshAgents.Clear();
+        private void OnDisable()
+        {
+            meshAgents.Clear();
+        }
+
+        public void AddMeshAgent(Unit unit)
+        {
+            meshAgents.Add(unit.GetComponent<NavMeshAgent>());
+        }
     }
 }

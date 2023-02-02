@@ -1,4 +1,4 @@
-﻿namespace WorldTree.Core
+﻿namespace WorldTree
 {
     // Using an enum to allow for potential for more types than just Nature or Civilization in the future
     public enum Faction

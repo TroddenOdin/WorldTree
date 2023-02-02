@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 2195088410754039464}
   - component: {fileID: 7853077264946880607}
   m_Layer: 6
-  m_Name: PathCell
-  m_TagString: Path
+  m_Name: WaterCell
+  m_TagString: Water
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 5
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1082328481900871593
 Transform:
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2fed1018c27f86d4f8e772274790f3ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
