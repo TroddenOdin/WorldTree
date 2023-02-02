@@ -10,6 +10,7 @@ namespace WorldTree
     public interface IDamageable
     {
         public void Damage(float damage);
-        public void Heal(float damage);
+        public void Heal(float health);
+        public void Die();
     }
 }

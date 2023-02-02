@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.GraphicsBuffer;
+using UnityEngine.Events;
 
 namespace WorldTree
 {
@@ -11,16 +11,31 @@ namespace WorldTree
         [SerializeField]
         private SOUnit _stats;
         public SOUnit stats => _stats;
+        private float _nextAttackTime;
+        private float _currentHealth;
+        private UnitNavMode _navMode;
+        public UnitNavMode navMode => _navMode;
 
         private static Dictionary<Faction, Dictionary<Unit, Vector3>> _unitPositions;
 
         private Unit _target;
         public Unit target => _target;
+        [HideInInspector]
+        public UnityEvent<Unit> OnSetTarget;
+        [HideInInspector]
+        public UnityEvent<Unit> OnDeath;
+        [HideInInspector]
+        public UnityEvent<Unit> OnAttack;
+
         private NavMeshAgent _meshAgent;
         public NavMeshAgent meshAgent => _meshAgent;
 
         private void Start()
         {
+            _nextAttackTime = Time.time;
+            _currentHealth = _stats.health;
+            _navMode = UnitNavMode.Selection;
+
             _meshAgent = GetComponent<NavMeshAgent>();
             UnitSelections.Instance.unitList.Add(gameObject);
             UnitMovement.Instance.AddMeshAgent(this);
@@ -34,6 +49,39 @@ namespace WorldTree
 
         private void Update()
         {
+            SetSpeed();
+            if(_target != null)
+            {
+                _navMode = UnitNavMode.Target;
+                Vector3 dist = transform.position - _target.transform.position;
+                if (dist.sqrMagnitude <= stats.attackRadius * stats.attackRadius)
+                {
+                    // move
+                    if (dist.sqrMagnitude >= stats.attackRadius * stats.attackRadius * 0.67f * 0.67f)
+                    {
+                        _meshAgent.speed *= 0.5f;
+                    }
+                    else
+                    {
+                        _meshAgent.speed = 0;
+                        _meshAgent.SetDestination(transform.position);
+                    }
+
+                    // attack
+                    if(_nextAttackTime <= Time.time)
+                    {
+                        _nextAttackTime = Time.time + 1 / _stats.attackSpeed;
+
+                        OnAttack.Invoke(this);
+
+                        _target.Damage(_stats.attackPower);
+                    }
+                }
+            }
+            else
+            {
+                _navMode = UnitNavMode.Selection;
+            }
             GetTarget();
         }
 
@@ -45,6 +93,11 @@ namespace WorldTree
         private void OnDestroy()
         {
             UnitSelections.Instance.unitList.Remove(gameObject);
+        }
+
+        private void SetSpeed()
+        {
+            _meshAgent.speed = _stats.moveSpeed; // incorporate terrain speed into this later
         }
 
         private void GetTarget()
@@ -60,20 +113,40 @@ namespace WorldTree
                     if ((unit.Value - transform.position).magnitude < _stats.agressionRadius)
                     {
                         _target = unit.Key;
+                        _target.OnDeath.AddListener(RemoveTarget);
+                        OnSetTarget.Invoke(this);
                         return;
                     }
                 }
             }
         }
 
-        public void Damage(float damage)
+        private void RemoveTarget(Unit unit)
         {
-            throw new System.NotImplementedException();
+            _target = null;
         }
 
-        public void Heal(float damage)
+        public void Damage(float damage)
         {
-            throw new System.NotImplementedException();
+            _currentHealth -= damage;
+            if (_currentHealth <= 0)
+                Die();
+        }
+
+        public void Heal(float health)
+        {
+            _currentHealth += health;
+        }
+
+        public void Die()
+        {
+            OnDeath.Invoke(this);
+
+            UnitSelections.Instance.unitList.Remove(gameObject);
+            UnitSelections.Instance.unitsSelected.Remove(gameObject);
+            _unitPositions[_stats.type].Remove(this);
+
+            Destroy(gameObject);
         }
     }
 }
