@@ -1,23 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace WorldTree
 {
-    [RequireComponent(typeof(NavMeshAgent))]
     public class Unit : MonoBehaviour, IDamageable
     {
-        [SerializeField]
-        private SOUnit _stats;
-        public SOUnit stats => _stats;
+      
 
-        private void Start()
+       public void Start()
         {
             UnitSelections.Instance.unitList.Add(this.gameObject);
-            UnitMovement.Instance.AddMeshAgent(this);
         }
 
 
-        private void OnDestroy()
+        void OnDestroy()
         {
             UnitSelections.Instance.unitList.Remove(this.gameObject);
         }
