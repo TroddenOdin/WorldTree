@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class UIManager : MonoBehaviour
 {
@@ -49,6 +50,18 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+    
+    private void OnEnable()
+    {
+        EventManager.AddListener("UpdateResourceTexts", _OnUpdateResourceTexts);
+        EventManager.AddListener("CheckBuildingButtons", _OnCheckBuildingButtons);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.RemoveListener("UpdateResourceTexts", _OnUpdateResourceTexts);
+        EventManager.RemoveListener("CheckBuildingButtons", _OnCheckBuildingButtons);
+    }
 
     private void _AddBuildingButtonListener(Button b, int i)
     {
@@ -60,19 +73,15 @@ public class UIManager : MonoBehaviour
         _resourceTexts[resource].text = value.ToString();
     }
     
-    public void UpdateResourceTexts()
+    private void _OnUpdateResourceTexts()
     {
         foreach (KeyValuePair<string, GameResource> pair in Globals.GAME_RESOURCES)
-        {
             _SetResourceText(pair.Key, pair.Value.Amount);
-        }
     }
-    
-    public void CheckBuildingButtons()
+
+    private void _OnCheckBuildingButtons()
     {
         foreach (BuildingData data in Globals.BUILDING_DATA)
-        {
             _buildingButtons[data.Code].interactable = data.CanBuy();
-        }
     }
 }

@@ -10,6 +10,7 @@ TagManager:
   - Mountain
   - Water
   - Ground
+  - Unit
   layers:
   - Default
   - TransparentFX
