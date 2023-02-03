@@ -1,64 +1,67 @@
 using UnityEngine;
 
-public class UnitClick : MonoBehaviour
+namespace WorldTree
 {
-    private Camera _myCam;
-
-    [SerializeField]
-    private LayerMask clickable;
-
-    [SerializeField]
-    private LayerMask ground;
-    
-    
-    void Start()
+    public class UnitClick : MonoBehaviour
     {
-        _myCam = Camera.main;
-    }
+        private Camera _myCam;
 
-    
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+        [SerializeField]
+        private LayerMask clickable;
+
+        [SerializeField]
+        private LayerMask ground;
+
+
+        void Start()
         {
-            RaycastHit hit;
-            Ray ray = _myCam.ScreenPointToRay(Input.mousePosition);
+            _myCam = Camera.main;
+        }
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, clickable))
+
+        void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
             {
-                //if we hit a clickable object
-                
-                //Normal Click Vice Shift Click
+                RaycastHit hit;
+                Ray ray = _myCam.ScreenPointToRay(Input.mousePosition);
 
-                if (Input.GetKey(KeyCode.LeftShift))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, clickable))
                 {
-                    //shift clicked
-                    UnitSelections.Instance.ShiftClickSelect(hit.collider.gameObject);
+                    //if we hit a clickable object
+
+                    //Normal Click Vice Shift Click
+
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        //shift clicked
+                        UnitSelections.Instance.ShiftClickSelect(hit.collider.gameObject);
+                    }
+                    else
+                    {
+                        //normal clicked
+                        UnitSelections.Instance.ClickSelect(hit.collider.gameObject);
+                    }
                 }
                 else
                 {
-                    //normal clicked
-                    UnitSelections.Instance.ClickSelect(hit.collider.gameObject);
-                }
-            }
-            else
-            {
-                //if we didnt and NOT shifting
-                if (!Input.GetKey(KeyCode.LeftShift))
-                {
-                    UnitSelections.Instance.DeselectAll(); 
-                }
-                
-                
-            }
-            
-            
-            
-            
+                    //if we didnt and NOT shifting
+                    if (!Input.GetKey(KeyCode.LeftShift))
+                    {
+                        UnitSelections.Instance.DeselectAll();
+                    }
 
+
+                }
+
+
+
+
+
+
+            }
 
         }
 
     }
-    
 }

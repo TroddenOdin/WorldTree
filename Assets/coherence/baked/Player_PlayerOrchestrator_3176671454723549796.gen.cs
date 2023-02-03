@@ -15,16 +15,16 @@ namespace Coherence.Generated
 	using Coherence.Toolkit;
 	using UnityEngine;
 
-	public struct WorldPosition : ICoherenceComponentData
+	public struct Player_PlayerOrchestrator_3176671454723549796 : ICoherenceComponentData
 	{
-		public Vector3 value;
+		public bool enabled;
 
 		public override string ToString()
 		{
-			return $"WorldPosition(value: {value})";
+			return $"Player_PlayerOrchestrator_3176671454723549796(enabled: {enabled})";
 		}
 
-		public uint GetComponentType() => Definition.InternalWorldPosition;
+		public uint GetComponentType() => Definition.InternalPlayer_PlayerOrchestrator_3176671454723549796;
 
 		public const int order = 0;
 
@@ -42,56 +42,44 @@ namespace Coherence.Generated
 
 		public ICoherenceComponentData MergeWith(ICoherenceComponentData data, uint mask)
 		{
-			var other = (WorldPosition)data;
+			var other = (Player_PlayerOrchestrator_3176671454723549796)data;
 			if ((mask & 0x01) != 0)
 			{
 				Frame = other.Frame;
-				value = other.value;
+				enabled = other.enabled;
 			}
 			mask >>= 1;
 			return this;
 		}
 
-		public static void Serialize(WorldPosition data, uint mask, IOutProtocolBitStream bitStream)
+		public static void Serialize(Player_PlayerOrchestrator_3176671454723549796 data, uint mask, IOutProtocolBitStream bitStream)
 		{
 			if (bitStream.WriteMask((mask & 0x01) != 0))
 			{
-				bitStream.WriteVector3((data.value.ToCoreVector3()), FloatMeta.NoCompression());
+				bitStream.WriteBool(data.enabled);
 			}
 			mask >>= 1;
 		}
 
-		public static (WorldPosition, uint, uint?) Deserialize(InProtocolBitStream bitStream)
+		public static (Player_PlayerOrchestrator_3176671454723549796, uint, uint?) Deserialize(InProtocolBitStream bitStream)
 		{
 			var mask = (uint)0;
-			var val = new WorldPosition();
+			var val = new Player_PlayerOrchestrator_3176671454723549796();
 	
 			if (bitStream.ReadMask())
 			{
-				val.value = (bitStream.ReadVector3(FloatMeta.NoCompression())).ToUnityVector3();
+				val.enabled = bitStream.ReadBool();
 				mask |= 0b00000000000000000000000000000001;
 			}
 			return (val, mask, null);
 		}
-		public static (WorldPosition, uint, uint?) DeserializeArchetypePlayer_b0a4b4641720deb4c85a8faaba398bf8_WorldPosition_LOD0(InProtocolBitStream bitStream)
+		public static (Player_PlayerOrchestrator_3176671454723549796, uint, uint?) DeserializeArchetypePlayer_b0a4b4641720deb4c85a8faaba398bf8_Player_PlayerOrchestrator_3176671454723549796_LOD0(InProtocolBitStream bitStream)
 		{
 			var mask = (uint)0;
-			var val = new WorldPosition();
+			var val = new Player_PlayerOrchestrator_3176671454723549796();
 			if (bitStream.ReadMask())
 			{
-				val.value = (bitStream.ReadVector3(FloatMeta.NoCompression())).ToUnityVector3();
-				mask |= 0b00000000000000000000000000000001;
-			}
-
-			return (val, mask, 0);
-		}
-		public static (WorldPosition, uint, uint?) DeserializeArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0(InProtocolBitStream bitStream)
-		{
-			var mask = (uint)0;
-			var val = new WorldPosition();
-			if (bitStream.ReadMask())
-			{
-				val.value = (bitStream.ReadVector3(FloatMeta.NoCompression())).ToUnityVector3();
+				val.enabled = bitStream.ReadBool();
 				mask |= 0b00000000000000000000000000000001;
 			}
 
@@ -107,7 +95,7 @@ namespace Coherence.Generated
 		/// </summary>
 		public void ResetByteArrays(ICoherenceComponentData lastSent, uint mask)
 		{
-			var last = lastSent as WorldPosition?;
+			var last = lastSent as Player_PlayerOrchestrator_3176671454723549796?;
 	
 		}
 	}

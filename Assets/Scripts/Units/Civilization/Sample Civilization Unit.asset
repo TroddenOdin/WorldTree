@@ -18,6 +18,6 @@ MonoBehaviour:
   moveSpeed: 5
   attackPower: 10
   attackSpeed: 2
-  agressionRadius: 10
+  agressionRadius: 7
   attackRadius: 2
   health: 50

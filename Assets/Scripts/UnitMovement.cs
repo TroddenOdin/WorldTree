@@ -44,28 +44,6 @@ namespace WorldTree
                     units[i].meshAgent.SetDestination(units[i].target.transform.position);
                 }
             }
-                
-
-            //int countOnCircle = Mathf.FloorToInt(360 / stepAngle);
-            //float randomizeAngle = Random.Range(0, stepAngle);
-            //for (int i = 0; i < units.Count; ++i)
-            //{
-            //    if (!UnitSelections.Instance.unitsSelected.Contains(units[i].gameObject)) continue;
-
-            //    var vec = Vector3.forward;
-            //    vec = Quaternion.Euler(0, stepAngle * (countOnCircle - 1) + randomizeAngle, 0) * vec;
-            //    units[i].meshAgent.SetDestination(units[i].meshAgent.destination + vec * (units[0].meshAgent.radius + units[i].meshAgent.radius + 0.5f) * step);
-            //    countOnCircle--;
-            //    i++;
-            //    if (countOnCircle == 0)
-            //    {
-            //        if (step != 3 && step != 4 && step < 6 || step == 10) { stepAngle /= 2f; }
-
-            //        countOnCircle = (int)(360 / stepAngle);
-            //        step++;
-            //        randomizeAngle = Random.Range(0, stepAngle);
-            //    }
-            //}
         }
 
         private void OnDisable()
