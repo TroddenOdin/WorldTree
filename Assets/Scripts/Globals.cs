@@ -8,10 +8,11 @@ public static class Globals
 
 
     //public static BuildingData[] BUILDING_DATA = {
-      //  new BuildingData("House", 100),
-        //new BuildingData("Tower", 50)
-   // };
-   public static List<UnitManager> SELECTED_UNITS = new List<UnitManager>();
+    //  new BuildingData("House", 100),
+    //new BuildingData("Tower", 50)
+    // };
+    public static List<UnitManager> UNITS = new List<UnitManager>();
+    public static List<UnitManager> SELECTED_UNITS = new List<UnitManager>();
    
    public static BuildingData[] BUILDING_DATA = new BuildingData[]
    {

@@ -21,6 +21,8 @@ namespace WorldTree
         private Unit _target;
         public Unit target => _target;
         [HideInInspector]
+        public UnityEvent<Unit> OnCreate;
+        [HideInInspector]
         public UnityEvent<Unit> OnSetTarget;
         [HideInInspector]
         public UnityEvent<Unit> OnDeath;
@@ -29,9 +31,6 @@ namespace WorldTree
 
         private NavMeshAgent _meshAgent;
         public NavMeshAgent meshAgent => _meshAgent;
-        [SerializeField]
-        private UnitManager _manager;
-        public UnitManager manager => _manager;
 
         private void Start()
         {
@@ -40,14 +39,13 @@ namespace WorldTree
             _navMode = UnitNavMode.Selection;
 
             _meshAgent = GetComponent<NavMeshAgent>();
-            
-            UnitMovement.Instance.AddMeshAgent(this);
 
             _unitPositions ??= new();
             if (!_unitPositions.ContainsKey(_stats.type)) 
                 _unitPositions[_stats.type] = new();
-            
+
             _unitPositions[_stats.type].Add(this, transform.position);
+            OnCreate.Invoke(this);
         }
 
         private void Update()

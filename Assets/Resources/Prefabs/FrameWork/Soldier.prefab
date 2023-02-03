@@ -198,7 +198,6 @@ MonoBehaviour:
   OnAttack:
     m_PersistentCalls:
       m_Calls: []
-  _manager: {fileID: 0}
 --- !u!114 &-3470946086667505742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,3 +357,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectionCircle: {fileID: 240045280222352505}
+  _unit: {fileID: 5921134435652645910}
+  OnSetTarget:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []

@@ -1,58 +1,61 @@
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
-public class BuildingManager : UnitManager
+namespace WorldTree
 {
-    private BoxCollider _collider;
-
-    private Building _building;
-    private int _nCollisions;
-
-    public void Initialize(Building building)
+    [RequireComponent(typeof(BoxCollider))]
+    public class BuildingManager : UnitManager
     {
-        _collider = GetComponent<BoxCollider>();
-        _building = building;
-    }
+        private BoxCollider _collider;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Ground") return;
-        _nCollisions++;
-        CheckPlacement();
-    }
+        private Building _building;
+        private int _nCollisions;
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Ground") return;
-
-        _nCollisions--;
-        CheckPlacement();
-    }
-
-    public bool CheckPlacement()
-    {
-        if (_building == null) return false;
-        if (_building.IsFixed) return false;
-        bool validPlacement = HasValidPlacement();
-
-        if (!validPlacement)
+        public void Initialize(Building building)
         {
-            _building.SetMaterials(BuildingPlacement.Invalid);
+            _collider = GetComponent<BoxCollider>();
+            _building = building;
         }
-        else
-        {
-            _building.SetMaterials(BuildingPlacement.Valid);
-        }
-        return validPlacement;
-    }
 
-    public bool HasValidPlacement()
-    {
-        return _nCollisions == 0;
-    }
-    
-    protected override bool IsActive()
-    {
-        return _building.IsFixed;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "Ground") return;
+            _nCollisions++;
+            CheckPlacement();
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.tag == "Ground") return;
+
+            _nCollisions--;
+            CheckPlacement();
+        }
+
+        public bool CheckPlacement()
+        {
+            if (_building == null) return false;
+            if (_building.IsFixed) return false;
+            bool validPlacement = HasValidPlacement();
+
+            if (!validPlacement)
+            {
+                _building.SetMaterials(BuildingPlacement.Invalid);
+            }
+            else
+            {
+                _building.SetMaterials(BuildingPlacement.Valid);
+            }
+            return validPlacement;
+        }
+
+        public bool HasValidPlacement()
+        {
+            return _nCollisions == 0;
+        }
+
+        protected override bool IsActive()
+        {
+            return _building.IsFixed;
+        }
     }
 }

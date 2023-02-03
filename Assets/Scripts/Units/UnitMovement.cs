@@ -11,7 +11,8 @@ namespace WorldTree
         public static UnitMovement Instance => _instance;
         Camera cam;
         public LayerMask ground;
-        public static List<Unit> units = new();
+        public static List<UnitManager> _units => Globals.UNITS;
+        public static List<UnitManager> _selectedUnits => Globals.SELECTED_UNITS;
 
         private void Start()
         {
@@ -33,34 +34,34 @@ namespace WorldTree
 
             bool clicked = Input.GetMouseButtonDown(1);
             bool didHit = Physics.Raycast(ray, out hit, Mathf.Infinity, ground);
-            for (int i = 0; i < units.Count; ++i)
+            for (int i = 0; i < _units.Count; ++i)
             {
-                if (units[i].navMode == UnitNavMode.Selection && clicked && didHit && Globals.SELECTED_UNITS.Contains(units[i].manager))
+                if (_units[i].unit.navMode == UnitNavMode.Selection && clicked && didHit && _selectedUnits.Contains(_units[i]))
                 {
-                    units[i].meshAgent.SetDestination(hit.point);
+                    _units[i].unit.meshAgent.SetDestination(hit.point);
                 }
-                else if (units[i].navMode == UnitNavMode.Target && units[i].target != null)
+                else if (_units[i].unit.navMode == UnitNavMode.Target && _units[i].unit.target != null)
                 {
-                    units[i].meshAgent.SetDestination(units[i].target.transform.position);
+                    _units[i].unit.meshAgent.SetDestination(_units[i].unit.target.transform.position);
                 }
             }
         }
 
         private void OnDisable()
         {
-            units.Clear();
+            _units.Clear();
         }
 
-        public void AddMeshAgent(Unit unit)
+        public void AddMeshAgent(UnitManager unit)
         {
-            units.Add(unit);
+            _units.Add(unit);
             unit.OnDeath.AddListener(RemoveUnit);
         }
 
-        private void RemoveUnit(Unit unit)
+        private void RemoveUnit(UnitManager unit)
         {
-            int index = units.IndexOf(unit);
-            units.RemoveAt(index);
+            int index = _units.IndexOf(unit);
+            _units.RemoveAt(index);
         }
     }
 }
