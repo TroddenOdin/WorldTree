@@ -5,6 +5,7 @@ public static class Globals
 {
 
     public static int TERRAIN_LAYER_MASK = 1 << 6;
+    public static Faction faction;
 
 
     //public static BuildingData[] BUILDING_DATA = {

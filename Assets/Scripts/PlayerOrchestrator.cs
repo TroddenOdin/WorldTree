@@ -17,12 +17,16 @@ namespace WorldTree
 
         private void Start()
         {
+            Globals.faction = _faction;
         }
         // Queejon's Todo-list
-        /*
-         * Fix duplication of units in multiplayer 
+        /* 
+         * Make units move speed be affected by the terrain
+         * Disable scripts until lobby is joined
          * Prompt player for faction choice on join
          * Display health above units
+         * 
+         * Fix duplication of units in multiplayer
          * 
          * Start patching together other contributions to the project
          */

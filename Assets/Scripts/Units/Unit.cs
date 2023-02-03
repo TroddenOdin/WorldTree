@@ -41,10 +41,10 @@ namespace WorldTree
             _meshAgent = GetComponent<NavMeshAgent>();
 
             _unitPositions ??= new();
-            if (!_unitPositions.ContainsKey(_stats.type)) 
-                _unitPositions[_stats.type] = new();
+            if (!_unitPositions.ContainsKey(_stats.faction)) 
+                _unitPositions[_stats.faction] = new();
 
-            _unitPositions[_stats.type].Add(this, transform.position);
+            _unitPositions[_stats.faction].Add(this, transform.position);
             OnCreate.Invoke(this);
         }
 
@@ -88,7 +88,7 @@ namespace WorldTree
 
         private void LateUpdate()
         {
-            _unitPositions[_stats.type][this] = transform.position;
+            _unitPositions[_stats.faction][this] = transform.position;
         }
 
         private void SetSpeed()
@@ -102,7 +102,7 @@ namespace WorldTree
 
             foreach (var dict in _unitPositions)
             {
-                if (dict.Key == _stats.type) continue;
+                if (dict.Key == _stats.faction) continue;
 
                 foreach (var unit in dict.Value)
                 {
@@ -138,7 +138,7 @@ namespace WorldTree
         {
             OnDeath.Invoke(this);
 
-            _unitPositions[_stats.type].Remove(this);
+            _unitPositions[_stats.faction].Remove(this);
 
             Destroy(gameObject);
         }

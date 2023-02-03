@@ -74,7 +74,8 @@ namespace WorldTree
 
         private void _SelectUtil()
         {
-            if (Globals.SELECTED_UNITS.Contains(this)) return;
+            if (Globals.SELECTED_UNITS.Contains(this) || _unit.stats.faction != Globals.faction) return;
+
             Globals.SELECTED_UNITS.Add(this);
             selectionCircle.SetActive(true);
         }
@@ -82,6 +83,7 @@ namespace WorldTree
         public void Deselect()
         {
             if (!Globals.SELECTED_UNITS.Contains(this)) return;
+
             Globals.SELECTED_UNITS.Remove(this);
             selectionCircle.SetActive(false);
         }
