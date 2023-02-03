@@ -119,6 +119,13 @@ public class Building
         
         //remove "is trigger" to allow collision
         _transform.GetComponent<BoxCollider>().isTrigger = false;
+        
+        // update game resources: remove the cost of the building
+        // from each game resource
+        foreach (KeyValuePair<string, int> pair in _data.Cost)
+        {
+            Globals.GAME_RESOURCES[pair.Key].AddAmount(-pair.Value);
+        }
     }
 
     public void CheckValidPlacement()
@@ -132,4 +139,9 @@ public class Building
     public bool IsFixed => _placement == BuildingPlacement.Fixed;
 
     public bool HasValidPlacement { get => _placement == BuildingPlacement.Valid; }
+    
+    public bool CanBuy()
+    {
+        return _data.CanBuy();
+    }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Path
   - Mountain
   - Water
+  - Ground
   layers:
   - Default
   - TransparentFX
