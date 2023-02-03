@@ -9,6 +9,13 @@ public class BuildingPlacer : MonoBehaviour
     private Ray _ray;
     private RaycastHit _raycastHit;
     private Vector3 _lastPlacementPosition;
+    
+    private UIManager _uiManager;
+    
+    private void Awake()
+    {
+        _uiManager = GetComponent<UIManager>();
+    }
 
     void Update()
     {
@@ -33,7 +40,7 @@ public class BuildingPlacer : MonoBehaviour
                 _lastPlacementPosition = _raycastHit.point;
             }
 
-            if (_placedBuilding.HasValidPlacement && Mouse.current.leftButton.isPressed && !EventSystem.current.IsPointerOverGameObject())
+            if (_placedBuilding.HasValidPlacement && Mouse.current.leftButton.wasPressedThisFrame && !EventSystem.current.IsPointerOverGameObject())
             {
                 //place building
                 _PlaceBuilding();
@@ -61,8 +68,12 @@ public class BuildingPlacer : MonoBehaviour
     void _PlaceBuilding()
     {
         _placedBuilding.Place();
-        // keep on building the same building type
-        _PreparePlacedBuilding(_placedBuilding.DataIndex);
+        if (_placedBuilding.CanBuy())
+            _PreparePlacedBuilding(_placedBuilding.DataIndex);
+        else
+            _placedBuilding = null;
+        EventManager.TriggerEvent("UpdateResourceTexts");
+        EventManager.TriggerEvent("CheckBuildingButtons");
     }
 
     void _CancelPlacedBuilding()

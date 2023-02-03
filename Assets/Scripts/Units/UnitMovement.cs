@@ -35,7 +35,7 @@ namespace WorldTree
             bool didHit = Physics.Raycast(ray, out hit, Mathf.Infinity, ground);
             for (int i = 0; i < units.Count; ++i)
             {
-                if (units[i].navMode == UnitNavMode.Selection && clicked && didHit && UnitSelections.Instance.unitsSelected.Contains(units[i].gameObject))
+                if (units[i].navMode == UnitNavMode.Selection && clicked && didHit && Globals.SELECTED_UNITS.Contains(units[i].manager))
                 {
                     units[i].meshAgent.SetDestination(hit.point);
                 }

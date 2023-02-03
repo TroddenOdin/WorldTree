@@ -22,43 +22,6 @@ namespace Coherence.Generated
 	using Logger = Coherence.Log.Logger;
 	using UnityEngine.Scripting;
 
-	public class Binding_b0a4b4641720deb4c85a8faaba398bf8_099592ed_ece2_47e9_bafe_bf924270289f : BoolBinding
-	{
-		private PlayerOrchestrator CastedUnityComponent;		
-
-		protected override void OnBindingCloned()
-		{
-			CastedUnityComponent = (PlayerOrchestrator)UnityComponent;
-		}
-		public override string CoherenceComponentName => "Player_PlayerOrchestrator_3176671454723549796";
-
-		public override uint FieldMask => 0b00000000000000000000000000000001;
-
-		public override bool Value
-		{
-			get => (bool)(System.Boolean)(CastedUnityComponent.enabled);
-			set => CastedUnityComponent.enabled = (System.Boolean)(value);
-		}
-
-		protected override bool ReadComponentData(ICoherenceComponentData coherenceComponent)
-		{
-			var update = (Player_PlayerOrchestrator_3176671454723549796)coherenceComponent;
-			return update.enabled;
-		}
-		
-		public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent)
-		{
-			var update = (Player_PlayerOrchestrator_3176671454723549796)coherenceComponent;
-			update.enabled = Value;
-			return update;
-		}
-
-		public override ICoherenceComponentData CreateComponentData()
-		{
-			return new Player_PlayerOrchestrator_3176671454723549796();
-		}
-	}
-
 
 	[Preserve]
 	[AddComponentMenu("coherence/Baked/Baked 'Player' (auto assigned)")]
@@ -79,16 +42,6 @@ namespace Coherence.Generated
 			coherenceSync.usingReflection = false;
 
 			logger = coherenceSync.logger.With<CoherenceSyncPlayer>();
-			if (coherenceSync.TryGetBindingByGuid("099592ed-ece2-47e9-bafe-bf924270289f", "enabled", out Binding InternalPlayer_PlayerOrchestrator_3176671454723549796_Player_PlayerOrchestrator_3176671454723549796_enabled))
-			{
-				var clone = new Binding_b0a4b4641720deb4c85a8faaba398bf8_099592ed_ece2_47e9_bafe_bf924270289f();
-				InternalPlayer_PlayerOrchestrator_3176671454723549796_Player_PlayerOrchestrator_3176671454723549796_enabled.CloneTo(clone);
-				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalPlayer_PlayerOrchestrator_3176671454723549796_Player_PlayerOrchestrator_3176671454723549796_enabled)] = clone;
-			}
-			else
-			{
-				logger.Error("Couldn't find binding (PlayerOrchestrator).enabled");
-			}
 		}
 
 		public override List<ICoherenceComponentData> CreateEntity()

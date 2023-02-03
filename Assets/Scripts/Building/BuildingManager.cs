@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
-public class BuildingManager : MonoBehaviour
+public class BuildingManager : UnitManager
 {
     private BoxCollider _collider;
 
@@ -49,5 +49,10 @@ public class BuildingManager : MonoBehaviour
     public bool HasValidPlacement()
     {
         return _nCollisions == 0;
+    }
+    
+    protected override bool IsActive()
+    {
+        return _building.IsFixed;
     }
 }

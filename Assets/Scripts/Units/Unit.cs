@@ -29,6 +29,9 @@ namespace WorldTree
 
         private NavMeshAgent _meshAgent;
         public NavMeshAgent meshAgent => _meshAgent;
+        [SerializeField]
+        private UnitManager _manager;
+        public UnitManager manager => _manager;
 
         private void Start()
         {
@@ -37,7 +40,7 @@ namespace WorldTree
             _navMode = UnitNavMode.Selection;
 
             _meshAgent = GetComponent<NavMeshAgent>();
-            UnitSelections.Instance.unitList.Add(gameObject);
+            
             UnitMovement.Instance.AddMeshAgent(this);
 
             _unitPositions ??= new();
@@ -90,11 +93,6 @@ namespace WorldTree
             _unitPositions[_stats.type][this] = transform.position;
         }
 
-        private void OnDestroy()
-        {
-            UnitSelections.Instance.unitList.Remove(gameObject);
-        }
-
         private void SetSpeed()
         {
             _meshAgent.speed = _stats.moveSpeed; // incorporate terrain speed into this later
@@ -142,8 +140,6 @@ namespace WorldTree
         {
             OnDeath.Invoke(this);
 
-            UnitSelections.Instance.unitList.Remove(gameObject);
-            UnitSelections.Instance.unitsSelected.Remove(gameObject);
             _unitPositions[_stats.type].Remove(this);
 
             Destroy(gameObject);

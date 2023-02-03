@@ -1,29 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using WorldTree;
 
-public class PlayerOrchestrator : MonoBehaviour
+namespace WorldTree
 {
-    [SerializeField]
-    private Faction _faction;
-    public Faction faction => _faction;
-
-    [SerializeField]
-    private UnitSelections _selections;
-    [SerializeField]
-    private UnitMovement _movement;
-
-    private void Start()
+    public class PlayerOrchestrator : MonoBehaviour
     {
-        _selections.faction = _faction;
+        [SerializeField]
+        private Faction _faction;
+        public Faction faction => _faction;
+
+        [SerializeField]
+        private UnitsSelection _selections;
+        [SerializeField]
+        private UnitMovement _movement;
+
+        private void Start()
+        {
+        }
+        // Queejon's Todo-list
+        /*
+         * Fix duplication of units in multiplayer 
+         * Prompt player for faction choice on join
+         * Display health above units
+         * 
+         * Start patching together other contributions to the project
+         */
     }
-    // Queejon's Todo-list
-    /*
-     * Fix duplication of units in multiplayer 
-     * Prompt player for faction choice on join
-     * Display health above units
-     * 
-     * Start patching together other contributions to the project
-     */
 }

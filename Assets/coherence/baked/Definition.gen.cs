@@ -16,7 +16,7 @@ namespace Coherence.Generated
 
 	public class Definition : IDefinition
 	{
-		public const string schemaId = "e0171a5f9e8c88d6d419a720deb69616c17c85db";
+		public const string schemaId = "8d7ae392097ec415c58212a706e3e2122dd57b19";
 		public const uint InternalWorldPosition = 0;
 		public const uint InternalWorldOrientation = 1;
 		public const uint InternalLocalUser = 2;
@@ -119,10 +119,7 @@ namespace Coherence.Generated
 		public const uint InternalGenericFieldULong3 = 99;
 		public const uint InternalGenericFieldColor0 = 100;
 		public const uint InternalGenericFieldColor1 = 101;
-		public const uint InternalPlayer_PlayerOrchestrator_3176671454723549796 = 102;
-		public const uint InternalArchetypePlayer_b0a4b4641720deb4c85a8faaba398bf8_WorldPosition_LOD0 = 103;
-		public const uint InternalArchetypePlayer_b0a4b4641720deb4c85a8faaba398bf8_Player_PlayerOrchestrator_3176671454723549796_LOD0 = 104;
-		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 105;
+		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 102;
 		public const uint InternalAuthorityRequest = 0;
 		public const uint InternalAuthorityTransfer = 1;
 		public const uint InternalQuerySynced = 2;
@@ -233,10 +230,7 @@ namespace Coherence.Generated
 			{ 99, "GenericFieldULong3" },
 			{ 100, "GenericFieldColor0" },
 			{ 101, "GenericFieldColor1" },
-			{ 102, "Player_PlayerOrchestrator_3176671454723549796" },
-			{ 103, "ArchetypePlayer_b0a4b4641720deb4c85a8faaba398bf8_WorldPosition_LOD0" },
-			{ 104, "ArchetypePlayer_b0a4b4641720deb4c85a8faaba398bf8_Player_PlayerOrchestrator_3176671454723549796_LOD0" },
-			{ 105, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
+			{ 102, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
 		};
 
 		public static string ComponentNameForTypeId(uint typeId)
@@ -462,12 +456,6 @@ namespace Coherence.Generated
 					return GenericFieldColor0.Deserialize(inProtocolStream);
 				case InternalGenericFieldColor1:
 					return GenericFieldColor1.Deserialize(inProtocolStream);
-				case InternalPlayer_PlayerOrchestrator_3176671454723549796:
-					return Player_PlayerOrchestrator_3176671454723549796.Deserialize(inProtocolStream);
-				case InternalArchetypePlayer_b0a4b4641720deb4c85a8faaba398bf8_WorldPosition_LOD0:
-					return WorldPosition.DeserializeArchetypePlayer_b0a4b4641720deb4c85a8faaba398bf8_WorldPosition_LOD0(inProtocolStream);
-				case InternalArchetypePlayer_b0a4b4641720deb4c85a8faaba398bf8_Player_PlayerOrchestrator_3176671454723549796_LOD0:
-					return Player_PlayerOrchestrator_3176671454723549796.DeserializeArchetypePlayer_b0a4b4641720deb4c85a8faaba398bf8_Player_PlayerOrchestrator_3176671454723549796_LOD0(inProtocolStream);
 				case InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0(inProtocolStream);
 				default:
@@ -785,9 +773,6 @@ namespace Coherence.Generated
 					break;
 				case InternalGenericFieldColor1:
 					GenericFieldColor1.Serialize((GenericFieldColor1)data, mask, protocolStream);
-					break;
-				case InternalPlayer_PlayerOrchestrator_3176671454723549796:
-					Player_PlayerOrchestrator_3176671454723549796.Serialize((Player_PlayerOrchestrator_3176671454723549796)data, mask, protocolStream);
 					break;
 			}
 		}
