@@ -34,13 +34,16 @@ public class UIManager : MonoBehaviour
         _buildingButtons = new Dictionary<string, Button>();
         for (int i = 0; i < Globals.BUILDING_DATA.Length; i++)
         {
-            GameObject button = GameObject.Instantiate(
-                buildingButtonPrefab,
-                buildingMenu);
-            string code = Globals.BUILDING_DATA[i].Code;
+            BuildingData data = Globals.BUILDING_DATA[i];
+            GameObject button = Instantiate(buildingButtonPrefab);
+            button.name = data.unitName;
+            button.transform.Find("Text").GetComponent<Text>().text = data.unitName;
+            Button b = null;
+            _buildingButtons[data.code] = b;
+            string code = Globals.BUILDING_DATA[i].code;
             button.name = code;
             button.transform.Find("Text").GetComponent<Text>().text = code;
-            Button b = button.GetComponent<Button>();
+            b = button.GetComponent<Button>();
             _AddBuildingButtonListener(b, i);
             
             _buildingButtons[code] = b;
@@ -48,6 +51,7 @@ public class UIManager : MonoBehaviour
             {
                 b.interactable = false;
             }
+            
         }
     }
     
@@ -82,6 +86,6 @@ public class UIManager : MonoBehaviour
     private void _OnCheckBuildingButtons()
     {
         foreach (BuildingData data in Globals.BUILDING_DATA)
-            _buildingButtons[data.Code].interactable = data.CanBuy();
+            _buildingButtons[data.code].interactable = data.CanBuy();
     }
 }

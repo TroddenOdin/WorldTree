@@ -50,4 +50,9 @@ public class BuildingManager : UnitManager
     {
         return _nCollisions == 0;
     }
+    
+    protected override bool IsActive()
+    {
+        return _building.IsFixed;
+    }
 }

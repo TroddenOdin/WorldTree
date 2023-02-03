@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -37,7 +37,7 @@ namespace WorldTree
             _navMode = UnitNavMode.Selection;
 
             _meshAgent = GetComponent<NavMeshAgent>();
-            UnitSelections.Instance.unitList.Add(gameObject);
+            
             UnitMovement.Instance.AddMeshAgent(this);
 
             _unitPositions ??= new();
@@ -149,4 +149,4 @@ namespace WorldTree
             Destroy(gameObject);
         }
     }
-}
+}*/
