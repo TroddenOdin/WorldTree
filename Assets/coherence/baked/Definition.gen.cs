@@ -16,7 +16,7 @@ namespace Coherence.Generated
 
 	public class Definition : IDefinition
 	{
-		public const string schemaId = "8b3cb0a37f973eee5af49a30f864b39078f86e0a";
+		public const string schemaId = "8d7ae392097ec415c58212a706e3e2122dd57b19";
 		public const uint InternalWorldPosition = 0;
 		public const uint InternalWorldOrientation = 1;
 		public const uint InternalLocalUser = 2;
@@ -119,6 +119,7 @@ namespace Coherence.Generated
 		public const uint InternalGenericFieldULong3 = 99;
 		public const uint InternalGenericFieldColor0 = 100;
 		public const uint InternalGenericFieldColor1 = 101;
+		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 102;
 		public const uint InternalAuthorityRequest = 0;
 		public const uint InternalAuthorityTransfer = 1;
 		public const uint InternalQuerySynced = 2;
@@ -229,6 +230,7 @@ namespace Coherence.Generated
 			{ 99, "GenericFieldULong3" },
 			{ 100, "GenericFieldColor0" },
 			{ 101, "GenericFieldColor1" },
+			{ 102, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
 		};
 
 		public static string ComponentNameForTypeId(uint typeId)
@@ -454,6 +456,8 @@ namespace Coherence.Generated
 					return GenericFieldColor0.Deserialize(inProtocolStream);
 				case InternalGenericFieldColor1:
 					return GenericFieldColor1.Deserialize(inProtocolStream);
+				case InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0:
+					return WorldPosition.DeserializeArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0(inProtocolStream);
 				default:
 					return (null, 0, 0);
 			}

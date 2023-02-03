@@ -21,6 +21,8 @@ namespace WorldTree
         private Unit _target;
         public Unit target => _target;
         [HideInInspector]
+        public UnityEvent<Unit> OnCreate;
+        [HideInInspector]
         public UnityEvent<Unit> OnSetTarget;
         [HideInInspector]
         public UnityEvent<Unit> OnDeath;
@@ -37,14 +39,13 @@ namespace WorldTree
             _navMode = UnitNavMode.Selection;
 
             _meshAgent = GetComponent<NavMeshAgent>();
-            UnitSelections.Instance.unitList.Add(gameObject);
-            UnitMovement.Instance.AddMeshAgent(this);
 
             _unitPositions ??= new();
-            if (!_unitPositions.ContainsKey(_stats.type)) 
-                _unitPositions[_stats.type] = new();
-            
-            _unitPositions[_stats.type].Add(this, transform.position);
+            if (!_unitPositions.ContainsKey(_stats.faction)) 
+                _unitPositions[_stats.faction] = new();
+
+            _unitPositions[_stats.faction].Add(this, transform.position);
+            OnCreate.Invoke(this);
         }
 
         private void Update()
@@ -87,12 +88,7 @@ namespace WorldTree
 
         private void LateUpdate()
         {
-            _unitPositions[_stats.type][this] = transform.position;
-        }
-
-        private void OnDestroy()
-        {
-            UnitSelections.Instance.unitList.Remove(gameObject);
+            _unitPositions[_stats.faction][this] = transform.position;
         }
 
         private void SetSpeed()
@@ -106,7 +102,7 @@ namespace WorldTree
 
             foreach (var dict in _unitPositions)
             {
-                if (dict.Key == _stats.type) continue;
+                if (dict.Key == _stats.faction) continue;
 
                 foreach (var unit in dict.Value)
                 {
@@ -142,9 +138,7 @@ namespace WorldTree
         {
             OnDeath.Invoke(this);
 
-            UnitSelections.Instance.unitList.Remove(gameObject);
-            UnitSelections.Instance.unitsSelected.Remove(gameObject);
-            _unitPositions[_stats.type].Remove(this);
+            _unitPositions[_stats.faction].Remove(this);
 
             Destroy(gameObject);
         }

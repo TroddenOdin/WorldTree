@@ -8,7 +8,7 @@ namespace WorldTree
     public class SOUnit : ScriptableObject
     {
         public string unitName;
-        public Faction type;
+        public Faction faction;
         public int cost;
         
         public float moveSpeed;
