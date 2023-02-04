@@ -6,6 +6,7 @@ namespace WorldTree
 {
     public class PlayerOrchestrator : MonoBehaviour
     {
+        [SerializeField]
         private Faction _faction;
         public Faction faction => _faction;
 
@@ -26,20 +27,29 @@ namespace WorldTree
         public void EnablePlayerScripts(Faction faction)
         {
             _faction = faction;
-            Globals.faction = _faction;
+            Globals.FACTION = _faction;
             _selections.gameObject.SetActive(true);
             _movement.gameObject.SetActive(true);
             _cameraController.enabled = true;
         }
-        // Queejon's Todo-list
-        /* 
-         * Disable scripts until lobby is joined
-         * Prompt player for faction choice on join
-         * Display health above units
+
+#if UNITY_EDITOR
+        [SerializeField]
+        private GameObject _soldierPrefabNature;
+        [SerializeField]
+        private GameObject _soldierPrefabCivilization;
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Instantiate(_faction == Faction.Nature ? _soldierPrefabNature : _soldierPrefabCivilization);
+            }
+        }
+        /* Another Queejon to-do list:
+         * Fix P2 faction choice based off P1 faction choice
+         * Fix authority bug when unit is killed
          * 
-         * Fix duplication of units in multiplayer
-         * 
-         * Start patching together other contributions to the project
          */
+#endif
     }
 }

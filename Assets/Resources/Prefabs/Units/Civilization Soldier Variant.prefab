@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3982488442494728780
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3470946086667505742, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: PrefabGuid
+      value: b7a82f6c353d52d4397768ab8f734fbc
+      objectReference: {fileID: 0}
+    - target: {fileID: -3470946086667505742, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: bakedScriptType
+      value: Coherence.Generated.CoherenceSyncCivilization__char_32_Soldier__char_32_Variant,
+        Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -3470946086667505742, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: archetype.archetypeName
+      value: Civilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc
+      objectReference: {fileID: 0}
+    - target: {fileID: -3470946086667505742, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: remoteVersionPrefabName
+      value: Prefabs/Units/Civilization Soldier Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -47.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.931
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645909, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fed1018c27f86d4f8e772274790f3ff, type: 2}
+    - target: {fileID: 5921134435652645913, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_Name
+      value: Civilization Soldier Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8c53656e690229449e63505503f1a5b, type: 3}

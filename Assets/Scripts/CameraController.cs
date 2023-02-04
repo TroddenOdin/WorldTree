@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
 {
     private CameraControlActions cameraActions;
     private InputAction movement;
+    [SerializeField]
     private Transform cameraTransform;
     
     //horizontal motion
@@ -50,7 +51,6 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         cameraActions = new CameraControlActions();
-        cameraTransform = this.GetComponentInChildren<Camera>().transform;
     }
 
     private void OnEnable()

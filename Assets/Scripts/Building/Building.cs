@@ -19,6 +19,7 @@ public class Building
     private BuildingPlacement _placement;
     private List<Material> _materials;
     private BuildingManager _buildingManager;
+    private BuildingPlacer _placer;
     
 
     public Building(BuildingData data)
@@ -97,9 +98,9 @@ public class Building
     public int DataIndex
     {
         get {
-            for (int i = 0; i < Globals.BUILDING_DATA.Length; i++)
+            for (int i = 0; i < _placer.buildings.Count; i++)
             {
-                if (Globals.BUILDING_DATA[i].code == _data.code)
+                if (_placer.buildings[i].code == _data.code)
                 {
                     return i;
                 }
