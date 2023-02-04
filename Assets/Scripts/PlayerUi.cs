@@ -98,7 +98,10 @@ public class PlayerUi : MonoBehaviour
 
     }    
 
-    
+    public void Forfeit()
+    {
+
+    }
 
     private void Update()
     {
