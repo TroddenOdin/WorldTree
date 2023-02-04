@@ -8,16 +8,13 @@ public class BuildingData : ScriptableObject
     public string unitName;
     public int healthpoints;
     public GameObject prefab;
-    public List<ResourceValue> cost;
+    public float cost;
 
    
-    public bool CanBuy()
-   {
-       foreach (ResourceValue resource in cost)
-           if (Globals.GAME_RESOURCES[resource.code].Amount < resource.amount)
-               return false;
-       return true;
-   }
+    public bool CanBuy(float mana)
+    {
+        return mana < cost; 
+    }
 
     
 }

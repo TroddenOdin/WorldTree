@@ -52,10 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc68652eecb8b7428e237b3e0102d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingPlacer: {fileID: 5898767595201318944}
   buildingMenu: {fileID: 7075405758740734568}
   buildingButtonPrefab: {fileID: 8826762089659834541, guid: 41b9dd6ac699eea45bd6915b1b52fd61, type: 3}
-  resourcesUIParent: {fileID: 2205083461009821381}
-  gameResourceDisplayPrefab: {fileID: 4444518763834460185, guid: 19cf2823542c06b4eaa1eb1d4a53c242, type: 3}
 --- !u!114 &5898767595201318944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20d43c734a0cf242bfa09db8d847722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 8802278226113716469}
   _buildings:
   - {fileID: 11400000, guid: a834abc344fe06f4ab94cd64f92fc82f, type: 2}
 --- !u!114 &5898767595201318945
@@ -386,11 +386,6 @@ PrefabInstance:
       objectReference: {fileID: 5898767595201318945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
---- !u!224 &2205083461009821381 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5712436134712697140, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
-  m_PrefabInstance: {fileID: 5898767593685364721}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6280253945829043633 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 503084221562159680, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
