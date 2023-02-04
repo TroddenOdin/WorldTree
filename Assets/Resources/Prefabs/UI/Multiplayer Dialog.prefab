@@ -6368,7 +6368,7 @@ GameObject:
   - component: {fileID: 5228993904149285422}
   - component: {fileID: 5228993904149285420}
   m_Layer: 5
-  m_Name: coherence Sample UI
+  m_Name: Multiplayer Dialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
