@@ -22,6 +22,7 @@ public class PlayerUi : MonoBehaviour
     public GameObject worldTreeCanvas;
     public GameObject vikingCanvas;
     public GameObject factionPickingCanvas;
+    public GameObject pauseMenuCanvas;
 
     public UnityEvent<Faction> OnFactionSelect;
 
@@ -32,6 +33,7 @@ public class PlayerUi : MonoBehaviour
         worldTreeCanvas.SetActive(false);
         vikingCanvas.SetActive(false);
         factionPickingCanvas.SetActive(false);
+        pauseMenuCanvas.SetActive(false);
     }
 
     public void SetMaxHealth()
@@ -79,5 +81,30 @@ public class PlayerUi : MonoBehaviour
     public void ShowFactionDialog()
     {
         factionPickingCanvas.SetActive(true);
+    }
+
+    public void ShowPauseMenu()
+    {
+        pauseMenuCanvas.SetActive(!pauseMenuCanvas.activeSelf);
+    }
+
+    public void ResumeButton()
+    {
+        pauseMenuCanvas.SetActive(false);
+    }
+
+    public void OptionsButton()
+    {
+
+    }    
+
+    
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            ShowPauseMenu();
+        }
     }
 }
