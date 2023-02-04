@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 5921134435652645910}
   - component: {fileID: -3470946086667505742}
   - component: {fileID: 2114364544329654178}
+  - component: {fileID: 3260530234409558920}
   m_Layer: 7
   m_Name: Soldier
   m_TagString: Unit
@@ -262,6 +263,8 @@ MonoBehaviour:
       lodStepsActive: 1
     - component: {fileID: 2114364544329654178}
       lodStepsActive: 1
+    - component: {fileID: 3260530234409558920}
+      lodStepsActive: 1
     lodLevels:
     - distance: 0
     archetypeName: Soldier_f8c53656e690229449e63505503f1a5b
@@ -370,3 +373,17 @@ MonoBehaviour:
   OnAttack:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3260530234409558920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5921134435652645913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c2b362c23b32d44ac72caa499ca1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  healthBarPrefab: {fileID: 6274221135833547738, guid: 68127dbba4d5d7a46b065635a2a03a0a, type: 3}
