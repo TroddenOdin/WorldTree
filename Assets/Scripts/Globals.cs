@@ -5,7 +5,7 @@ public static class Globals
 {
 
     public static int TERRAIN_LAYER_MASK = 1 << 6;
-    public static Faction faction;
+    public static Faction FACTION;
 
 
     //public static BuildingData[] BUILDING_DATA = {
@@ -14,11 +14,6 @@ public static class Globals
     // };
     public static List<UnitManager> UNITS = new List<UnitManager>();
     public static List<UnitManager> SELECTED_UNITS = new List<UnitManager>();
-   
-   public static BuildingData[] BUILDING_DATA = new BuildingData[]
-   {
-       
-   };
     
     public static Dictionary<string, GameResource> GAME_RESOURCES =
         new Dictionary<string, GameResource>()

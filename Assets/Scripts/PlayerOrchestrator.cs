@@ -27,7 +27,7 @@ namespace WorldTree
         public void EnablePlayerScripts(Faction faction)
         {
             _faction = faction;
-            Globals.faction = _faction;
+            Globals.FACTION = _faction;
             _selections.gameObject.SetActive(true);
             _movement.gameObject.SetActive(true);
             _cameraController.enabled = true;
@@ -46,7 +46,6 @@ namespace WorldTree
             }
         }
         /* Another Queejon to-do list:
-         * Set room size
          * Fix P2 faction choice based off P1 faction choice
          * Fix authority bug when unit is killed
          * 
