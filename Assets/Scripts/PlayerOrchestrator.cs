@@ -45,11 +45,12 @@ namespace WorldTree
                 Instantiate(_faction == Faction.Nature ? _soldierPrefabNature : _soldierPrefabCivilization);
             }
         }
-#endif
-        // Queejon's Todo-list
-        /* 
-         * Display health above units
-         * Fix duplication of units in multiplayer
+        /* Another Queejon to-do list:
+         * Set room size
+         * Fix P2 faction choice based off P1 faction choice
+         * Fix authority bug when unit is killed
+         * 
          */
+#endif
     }
 }
