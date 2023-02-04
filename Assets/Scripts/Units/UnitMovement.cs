@@ -11,8 +11,12 @@ namespace WorldTree
         public static UnitMovement Instance => _instance;
         Camera cam;
         public LayerMask ground;
-        public static List<UnitManager> _units => Globals.UNITS;
-        public static List<UnitManager> _selectedUnits => Globals.SELECTED_UNITS;
+        private static List<UnitManager> _units => Globals.UNITS;
+        private static List<UnitManager> _selectedUnits => Globals.SELECTED_UNITS;
+        [SerializeField]
+        private TerrainManager _terrain;
+        public TerrainManager terrain => _terrain;
+
 
         private void Start()
         {

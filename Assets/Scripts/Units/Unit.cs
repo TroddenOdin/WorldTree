@@ -93,7 +93,7 @@ namespace WorldTree
 
         private void SetSpeed()
         {
-            _meshAgent.speed = _stats.moveSpeed; // incorporate terrain speed into this later
+            _meshAgent.speed = _stats.moveSpeed * UnitMovement.Instance.terrain[transform.position].moveMultiplier; 
         }
 
         private void GetTarget()
