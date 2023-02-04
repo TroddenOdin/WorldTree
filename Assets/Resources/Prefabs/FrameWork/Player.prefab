@@ -49,6 +49,8 @@ MonoBehaviour:
   _selections: {fileID: 0}
   _movement: {fileID: 0}
   _cameraController: {fileID: 0}
+  _soldierPrefabNature: {fileID: 2778268138533596785, guid: d6a82c87e5905cf4da2d7816df59e943, type: 3}
+  _soldierPrefabCivilization: {fileID: 7307297407339302485, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
 --- !u!114 &3551402878642391742
 MonoBehaviour:
   m_ObjectHideFlags: 0

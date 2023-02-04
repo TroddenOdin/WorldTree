@@ -6,6 +6,7 @@ namespace WorldTree
 {
     public class PlayerOrchestrator : MonoBehaviour
     {
+        [SerializeField]
         private Faction _faction;
         public Faction faction => _faction;
 
@@ -31,15 +32,24 @@ namespace WorldTree
             _movement.gameObject.SetActive(true);
             _cameraController.enabled = true;
         }
+
+#if UNITY_EDITOR
+        [SerializeField]
+        private GameObject _soldierPrefabNature;
+        [SerializeField]
+        private GameObject _soldierPrefabCivilization;
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Instantiate(_faction == Faction.Nature ? _soldierPrefabNature : _soldierPrefabCivilization);
+            }
+        }
+#endif
         // Queejon's Todo-list
         /* 
-         * Disable scripts until lobby is joined
-         * Prompt player for faction choice on join
          * Display health above units
-         * 
          * Fix duplication of units in multiplayer
-         * 
-         * Start patching together other contributions to the project
          */
     }
 }
