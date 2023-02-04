@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
-using WorldTree;
 
 public class PlayerUi : MonoBehaviour
 {
@@ -23,7 +21,8 @@ public class PlayerUi : MonoBehaviour
     public GameObject vikingCanvas;
     public GameObject factionPickingCanvas;
 
-    public UnityEvent<Faction> OnFactionSelect;
+    public GameObject game;
+
 
 
     // Start is called before the first frame update
@@ -32,6 +31,7 @@ public class PlayerUi : MonoBehaviour
         worldTreeCanvas.SetActive(false);
         vikingCanvas.SetActive(false);
         factionPickingCanvas.SetActive(false);
+        //game.SetActive(false);
     }
 
     public void SetMaxHealth()
@@ -67,13 +67,19 @@ public class PlayerUi : MonoBehaviour
         vikingManaSlider.value = player.currentMana;
     }
 
-    public void ChooseWorldTree(bool worldTree = true)
+    public void ChooseWorldTree()
     {
-        worldTreeCanvas.SetActive(worldTree);
-        vikingCanvas.SetActive(!worldTree);
+        worldTreeCanvas.SetActive(true);
+        vikingCanvas.SetActive(false);
         factionPickingCanvas.SetActive(false);
-
-        OnFactionSelect.Invoke(worldTree ? Faction.Nature : Faction.Civilization);
+        game.SetActive(true);
+    }
+    public void ChooseVikings()
+    {
+        worldTreeCanvas.SetActive(false);
+        vikingCanvas.SetActive(true);
+        factionPickingCanvas.SetActive(false);
+        game.SetActive(true);
     }
 
     public void ShowFactionDialog()
