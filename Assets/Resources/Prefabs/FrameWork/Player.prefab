@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1923677697727453701}
   - component: {fileID: 8100908598824416997}
   - component: {fileID: 3176671454723549796}
+  - component: {fileID: 3551402878642391742}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -83,6 +84,8 @@ MonoBehaviour:
     - component: {fileID: 1923677697727453701}
       lodStepsActive: 1
     - component: {fileID: 3176671454723549796}
+      lodStepsActive: 1
+    - component: {fileID: 3551402878642391742}
       lodStepsActive: 1
     lodLevels:
     - distance: 0
@@ -241,3 +244,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _faction: 2
+  _selections: {fileID: 0}
+  _movement: {fileID: 0}
+--- !u!114 &3551402878642391742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923677697727453700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427f8d234d38a53478d41e6d6f87be98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerUi: {fileID: 0}
+  currentHealth: 100
+  maxHealth: 100
+  minHealth: 0
+  playerDamage: 25
+  currentMana: 100
+  maxMana: 100
+  minMana: 0
+  worldTreeAbility1: {fileID: 0}
+  worldTreeAbility2: {fileID: 0}
+  worldTreeAbility3: {fileID: 0}
+  worldTreeAbility4: {fileID: 0}
+  worldTreeAbility5: {fileID: 0}
+  worldTreeAbility6: {fileID: 0}
+  worldTreeAbility7: {fileID: 0}
+  worldTreeAbility8: {fileID: 0}
+  vikingAbility1: {fileID: 0}
+  vikingAbility2: {fileID: 0}
+  vikingAbility3: {fileID: 0}
+  vikingAbility4: {fileID: 0}
+  vikingAbility5: {fileID: 0}
+  vikingAbility6: {fileID: 0}
+  vikingAbility7: {fileID: 0}
