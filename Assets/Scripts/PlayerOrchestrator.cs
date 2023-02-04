@@ -46,10 +46,5 @@ namespace WorldTree
             }
         }
 #endif
-        // Queejon's Todo-list
-        /* 
-         * Display health above units
-         * Fix duplication of units in multiplayer
-         */
     }
 }
