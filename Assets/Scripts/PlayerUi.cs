@@ -30,8 +30,8 @@ public class PlayerUi : MonoBehaviour
     {
         worldTreeCanvas.SetActive(false);
         vikingCanvas.SetActive(false);
-        factionPickingCanvas.SetActive(true);
-        game.SetActive(false);
+        factionPickingCanvas.SetActive(false);
+        //game.SetActive(false);
     }
 
     public void SetMaxHealth()
@@ -82,15 +82,8 @@ public class PlayerUi : MonoBehaviour
         game.SetActive(true);
     }
 
-
-
-
-
-
-    // Update is called once per frame
-    void Update()
+    public void ShowFactionDialog()
     {
-        
-          
+        factionPickingCanvas.SetActive(true);
     }
 }
