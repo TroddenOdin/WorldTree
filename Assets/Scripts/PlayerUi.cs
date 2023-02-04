@@ -23,6 +23,7 @@ public class PlayerUi : MonoBehaviour
     public GameObject vikingCanvas;
     public GameObject factionPickingCanvas;
     public GameObject pauseMenuCanvas;
+    public GameObject optionsMenuCanvas;
 
     public UnityEvent<Faction> OnFactionSelect;
 
@@ -95,7 +96,7 @@ public class PlayerUi : MonoBehaviour
 
     public void OptionsButton()
     {
-
+        optionsMenuCanvas.SetActive(true);
     }    
 
     public void Forfeit()
