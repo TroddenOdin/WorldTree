@@ -18,7 +18,15 @@ public class UnitHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 2f;
+        if (GetComponent<Renderer>().isVisible)
+        {
+            healthBar.SetActive(true);
+            healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 25f;
+        }
+        else
+        {
+            healthBar.SetActive(false);
+        }
     }
 
     private void OnDestroy()
