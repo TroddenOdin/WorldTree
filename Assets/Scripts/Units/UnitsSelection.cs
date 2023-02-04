@@ -18,10 +18,11 @@ namespace WorldTree
                 _dragStartPosition = Input.mousePosition;
             }
 
-            if (Input.GetMouseButtonUp(0) && _dragStartPosition != Input.mousePosition)
+            if (Input.GetMouseButtonUp(0))
             {
-                _SelectUnitsInDraggingBox();
-                _isDraggingMouseBox = false;            
+                _isDraggingMouseBox = false;
+                if (_dragStartPosition != Input.mousePosition)
+                    _SelectUnitsInDraggingBox();
             }
 
             if (Globals.SELECTED_UNITS.Count > 0)

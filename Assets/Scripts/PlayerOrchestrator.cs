@@ -14,21 +14,42 @@ namespace WorldTree
         private UnitsSelection _selections;
         [SerializeField]
         private UnitMovement _movement;
+        [SerializeField]
+        private CameraController _cameraController;
 
         private void Start()
         {
-            Globals.faction = _faction;
+            _selections.gameObject.SetActive(false);
+            _movement.gameObject.SetActive(false);
+            _cameraController.enabled = false;
         }
+
+        public void EnablePlayerScripts(Faction faction)
+        {
+            _faction = faction;
+            Globals.faction = _faction;
+            _selections.gameObject.SetActive(true);
+            _movement.gameObject.SetActive(true);
+            _cameraController.enabled = true;
+        }
+
+#if UNITY_EDITOR
+        [SerializeField]
+        private GameObject _soldierPrefabNature;
+        [SerializeField]
+        private GameObject _soldierPrefabCivilization;
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Instantiate(_faction == Faction.Nature ? _soldierPrefabNature : _soldierPrefabCivilization);
+            }
+        }
+#endif
         // Queejon's Todo-list
         /* 
-         * Make units move speed be affected by the terrain
-         * Disable scripts until lobby is joined
-         * Prompt player for faction choice on join
          * Display health above units
-         * 
          * Fix duplication of units in multiplayer
-         * 
-         * Start patching together other contributions to the project
          */
     }
 }
