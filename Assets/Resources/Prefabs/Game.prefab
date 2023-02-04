@@ -94,6 +94,8 @@ MonoBehaviour:
   worldTreeCanvas: {fileID: 6280253947720024945}
   vikingCanvas: {fileID: 6280253945870521210}
   factionPickingCanvas: {fileID: 6280253947188539317}
+  pauseMenuCanvas: {fileID: 5163736035945134673}
+  optionsMenuCanvas: {fileID: 1267803919540478336}
   OnFactionSelect:
     m_PersistentCalls:
       m_Calls:
@@ -386,6 +388,16 @@ PrefabInstance:
       objectReference: {fileID: 5898767595201318945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+--- !u!1 &1267803919540478336 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4630972745285193329, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+  m_PrefabInstance: {fileID: 5898767593685364721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5163736035945134673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1618453969516303776, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+  m_PrefabInstance: {fileID: 5898767593685364721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6280253945829043633 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 503084221562159680, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
