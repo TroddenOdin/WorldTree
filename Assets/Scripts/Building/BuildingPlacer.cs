@@ -11,6 +11,9 @@ public class BuildingPlacer : MonoBehaviour
     private RaycastHit _raycastHit;
     private Vector3 _lastPlacementPosition;
     [SerializeField]
+    private Player _player;
+    public Player player => _player;
+    [SerializeField]
     private List<BuildingData> _buildings;
     public List<BuildingData> buildings => _buildings;
     
@@ -60,7 +63,7 @@ public class BuildingPlacer : MonoBehaviour
             Destroy(_placedBuilding.Transform.gameObject);
         }
 
-        Building building = new Building(_buildings[buildingDataIndex]);
+        Building building = new Building(_buildings[buildingDataIndex], this);
         
         //link into manager
         building.Transform.GetComponent<BuildingManager>().Initialize(building);

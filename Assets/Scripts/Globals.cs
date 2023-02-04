@@ -14,11 +14,4 @@ public static class Globals
     // };
     public static List<UnitManager> UNITS = new List<UnitManager>();
     public static List<UnitManager> SELECTED_UNITS = new List<UnitManager>();
-    
-    public static Dictionary<string, GameResource> GAME_RESOURCES =
-        new Dictionary<string, GameResource>()
-        {
-            { "mana", new GameResource("Mana", 300) }
-        };
-    
 }
