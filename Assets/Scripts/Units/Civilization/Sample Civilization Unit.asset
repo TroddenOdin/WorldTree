@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Sample Civilization Unit
   m_EditorClassIdentifier: 
   unitName: SampleC
-  type: 1
+  faction: 1
   cost: 0
   moveSpeed: 5
   attackPower: 10
   attackSpeed: 2
-  agressionRadius: 10
+  agressionRadius: 7
   attackRadius: 2
   health: 50

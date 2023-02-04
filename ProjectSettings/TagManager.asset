@@ -9,6 +9,8 @@ TagManager:
   - Path
   - Mountain
   - Water
+  - Ground
+  - Unit
   layers:
   - Default
   - TransparentFX

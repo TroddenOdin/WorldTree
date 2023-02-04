@@ -10,8 +10,17 @@ namespace Coherence.Generated
 
 	public static class Archetypes
 	{
+		public const int Civilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbcIndex = 0;
+		public const int Nature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943Index = 1;
+		public const int Soldier_f8c53656e690229449e63505503f1a5bIndex = 2;
 
 		public static Dictionary<string, int> IndexForName = new Dictionary<string, int>() {
+			{ "Civilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc", 0 },
+
+			{ "Nature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943", 1 },
+
+			{ "Soldier_f8c53656e690229449e63505503f1a5b", 2 },
+
 		};
 	}
 }
