@@ -27,6 +27,8 @@ public class PlayerUi : MonoBehaviour
 
     public UnityEvent<Faction> OnFactionSelect;
 
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +37,10 @@ public class PlayerUi : MonoBehaviour
         vikingCanvas.SetActive(false);
         factionPickingCanvas.SetActive(false);
         pauseMenuCanvas.SetActive(false);
+
     }
+
+    
 
     public void SetMaxHealth()
     {
@@ -97,6 +102,7 @@ public class PlayerUi : MonoBehaviour
     public void OptionsButton()
     {
         optionsMenuCanvas.SetActive(true);
+        pauseMenuCanvas.SetActive(false);
     }    
 
     public void Forfeit()
@@ -104,11 +110,20 @@ public class PlayerUi : MonoBehaviour
 
     }
 
+    public void BackButton()
+    {
+        optionsMenuCanvas.SetActive(false);
+        pauseMenuCanvas.SetActive(true);
+    }
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             ShowPauseMenu();
         }
-    }
+
+    }   
+    
+    
 }

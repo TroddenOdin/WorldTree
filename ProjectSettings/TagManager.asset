@@ -11,6 +11,8 @@ TagManager:
   - Water
   - Ground
   - Unit
+  - MenuMusic
+  - GameMusic
   layers:
   - Default
   - TransparentFX
