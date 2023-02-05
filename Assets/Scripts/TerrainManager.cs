@@ -33,7 +33,7 @@ namespace WorldTree
                     _cellBounds.max = new(pos.x > _cellBounds.max.x ? pos.x : _cellBounds.max.x, 0, pos.z > _cellBounds.max.z ? pos.z : _cellBounds.max.z);
             }
 
-            Debug.Log($"X: {_cellBounds.max.x - _cellBounds.min.x}, Z: {_cellBounds.max.z - _cellBounds.min.z}");
+            //Debug.Log($"X: {_cellBounds.max.x - _cellBounds.min.x}, Z: {_cellBounds.max.z - _cellBounds.min.z}");
         }
 
         private void GetCells()

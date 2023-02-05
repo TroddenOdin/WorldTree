@@ -73,6 +73,30 @@ namespace Coherence.Generated
 			}
 			return (val, mask, null);
 		}
+		public static (WorldPosition, uint, uint?) DeserializeArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0(InProtocolBitStream bitStream)
+		{
+			var mask = (uint)0;
+			var val = new WorldPosition();
+			if (bitStream.ReadMask())
+			{
+				val.value = (bitStream.ReadVector3(FloatMeta.NoCompression())).ToUnityVector3();
+				mask |= 0b00000000000000000000000000000001;
+			}
+
+			return (val, mask, 0);
+		}
+		public static (WorldPosition, uint, uint?) DeserializeArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0(InProtocolBitStream bitStream)
+		{
+			var mask = (uint)0;
+			var val = new WorldPosition();
+			if (bitStream.ReadMask())
+			{
+				val.value = (bitStream.ReadVector3(FloatMeta.NoCompression())).ToUnityVector3();
+				mask |= 0b00000000000000000000000000000001;
+			}
+
+			return (val, mask, 0);
+		}
 		public static (WorldPosition, uint, uint?) DeserializeArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0(InProtocolBitStream bitStream)
 		{
 			var mask = (uint)0;

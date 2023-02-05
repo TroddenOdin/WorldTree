@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
+using WorldTree;
 
 public class PlayerUi : MonoBehaviour
 {
@@ -20,9 +22,12 @@ public class PlayerUi : MonoBehaviour
     public GameObject worldTreeCanvas;
     public GameObject vikingCanvas;
     public GameObject factionPickingCanvas;
+    public GameObject pauseMenuCanvas;
+    public GameObject optionsMenuCanvas;
 
-    public GameObject game;
+    public UnityEvent<Faction> OnFactionSelect;
 
+    
 
 
     // Start is called before the first frame update
@@ -30,9 +35,12 @@ public class PlayerUi : MonoBehaviour
     {
         worldTreeCanvas.SetActive(false);
         vikingCanvas.SetActive(false);
-        factionPickingCanvas.SetActive(true);
-        game.SetActive(false);
+        factionPickingCanvas.SetActive(false);
+        pauseMenuCanvas.SetActive(false);
+
     }
+
+    
 
     public void SetMaxHealth()
     {
@@ -67,30 +75,55 @@ public class PlayerUi : MonoBehaviour
         vikingManaSlider.value = player.currentMana;
     }
 
-    public void ChooseWorldTree()
+    public void ChooseWorldTree(bool worldTree = true)
     {
-        worldTreeCanvas.SetActive(true);
-        vikingCanvas.SetActive(false);
+        worldTreeCanvas.SetActive(worldTree);
+        vikingCanvas.SetActive(!worldTree);
         factionPickingCanvas.SetActive(false);
-        game.SetActive(true);
+
+        OnFactionSelect.Invoke(worldTree ? Faction.Nature : Faction.Civilization);
     }
-    public void ChooseVikings()
+
+    public void ShowFactionDialog()
     {
-        worldTreeCanvas.SetActive(false);
-        vikingCanvas.SetActive(true);
-        factionPickingCanvas.SetActive(false);
-        game.SetActive(true);
+        factionPickingCanvas.SetActive(true);
     }
 
-
-
-
-
-
-    // Update is called once per frame
-    void Update()
+    public void ShowPauseMenu()
     {
-        
-          
+        pauseMenuCanvas.SetActive(!pauseMenuCanvas.activeSelf);
     }
+
+    public void ResumeButton()
+    {
+        pauseMenuCanvas.SetActive(false);
+    }
+
+    public void OptionsButton()
+    {
+        optionsMenuCanvas.SetActive(true);
+        pauseMenuCanvas.SetActive(false);
+    }    
+
+    public void Forfeit()
+    {
+
+    }
+
+    public void BackButton()
+    {
+        optionsMenuCanvas.SetActive(false);
+        pauseMenuCanvas.SetActive(true);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ShowPauseMenu();
+        }
+
+    }   
+    
+    
 }

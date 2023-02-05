@@ -11,6 +11,8 @@ TagManager:
   - Water
   - Ground
   - Unit
+  - MenuMusic
+  - GameMusic
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Ground
   - Clickable
   - MapAreas
-  - 
+  - FogOfWar
   - 
   - 
   - 

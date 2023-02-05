@@ -19,11 +19,14 @@ public class Building
     private BuildingPlacement _placement;
     private List<Material> _materials;
     private BuildingManager _buildingManager;
+    private BuildingPlacer _placer;
     
 
-    public Building(BuildingData data)
+    public Building(BuildingData data, BuildingPlacer placer)
     {
         _data = data;
+        _placer = placer;
+
         _currentHealth = data.healthpoints;
 
         GameObject g = GameObject.Instantiate(data.prefab) as GameObject;
@@ -97,9 +100,9 @@ public class Building
     public int DataIndex
     {
         get {
-            for (int i = 0; i < Globals.BUILDING_DATA.Length; i++)
+            for (int i = 0; i < _placer.buildings.Count; i++)
             {
-                if (Globals.BUILDING_DATA[i].code == _data.code)
+                if (_placer.buildings[i].code == _data.code)
                 {
                     return i;
                 }
@@ -118,13 +121,6 @@ public class Building
         
         //remove "is trigger" to allow collision
         _transform.GetComponent<BoxCollider>().isTrigger = false;
-        
-        // update game resources: remove the cost of the building
-        // from each game resource
-        foreach (ResourceValue resource in _data.cost)
-        {
-            Globals.GAME_RESOURCES[resource.code].AddAmount(-resource.amount);
-        }
     }
 
     public void CheckValidPlacement()
@@ -141,7 +137,6 @@ public class Building
     
     public bool CanBuy()
     {
-        return _data.CanBuy();
+        return _data.CanBuy(_placer.player.currentMana);
     }
-    
 }
