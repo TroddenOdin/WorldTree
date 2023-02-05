@@ -18,8 +18,27 @@ namespace WorldTree
         public float maxMana = 100;
         public float minMana = 0;
 
+       //public int manaUsageAmount;
+
         private Faction _faction;
         public Faction faction => _faction;
+
+        public Button treeUnitButton1;
+        public Button treeUnitButton2;
+        public Button treeUnitButton3;
+        public Button treeAbilityButton1;
+        public Button treeAbilityButton2;
+
+        public Button vikingUnitButton1;
+        public Button vikingUnitButton2;
+        public Button vikingUnitButton3;
+        public Button vikingAbilityButton1;
+        public Button vikingAbilityButton2;
+
+
+        public int[] treeManaUsageAmount;
+        public int[] vikingManaUsageAmount;
+
 
         // Arbitrary constants added to hasten script writing used here
         public float manaGain =>
@@ -45,6 +64,60 @@ namespace WorldTree
         public void SetFaction(Faction faction)
         {
             _faction = faction;
+        }
+
+        public void TreeUnitButton1()
+        {
+
+            currentMana = currentMana -= treeManaUsageAmount[0];
+            playerUi.SetMana();
+
+        }
+        public void TreeUnitButton2()
+        {
+            currentMana = currentMana -= treeManaUsageAmount[1];
+            playerUi.SetMana();
+        }
+        public void TreeUnitButton3()
+        {
+            currentMana = currentMana -= treeManaUsageAmount[2];
+            playerUi.SetMana();
+        }
+        public void TreeAbilityButton1()
+        {
+            currentMana = currentMana -= treeManaUsageAmount[3];
+            playerUi.SetMana();
+        }
+        public void TreeAbilityButton2()
+        {
+            currentMana = currentMana -= treeManaUsageAmount[4];
+            playerUi.SetMana();
+        }
+
+        public void VikingUnitButton1()
+        {
+            currentMana = currentMana -= vikingManaUsageAmount[0];
+            playerUi.SetMana();
+        }
+        public void VikingUnitButton2()
+        {
+            currentMana = currentMana -= vikingManaUsageAmount[1];
+            playerUi.SetMana();
+        }
+        public void VikingUnitButton3()
+        {
+            currentMana = currentMana -= vikingManaUsageAmount[2];
+            playerUi.SetMana();
+        }
+        public void VikingAbilityButton1()
+        {
+            currentMana = currentMana -= vikingManaUsageAmount[3];
+            playerUi.SetMana();
+        }
+        public void VikingAbilityButton2()
+        {
+            currentMana = currentMana -= vikingManaUsageAmount[4];
+            playerUi.SetMana();
         }
     }
 }

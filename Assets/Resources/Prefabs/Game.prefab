@@ -60,6 +60,12 @@ MonoBehaviour:
   vikingHealthSlider: {fileID: 6280253947830772688}
   vikingManaFill: {fileID: 6280253947514488151}
   vikingManaSlider: {fileID: 6280253947534152650}
+  fillTweeningCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   worldTreeCanvas: {fileID: 6280253947720024945}
   vikingCanvas: {fileID: 6280253945870521210}
   factionPickingCanvas: {fileID: 6280253947188539317}
@@ -268,11 +274,11 @@ PrefabInstance:
     - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: vikingAbility4
       value: 
-      objectReference: {fileID: 6280253946778652876}
+      objectReference: {fileID: 0}
     - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: vikingAbility5
       value: 
-      objectReference: {fileID: 6280253945857909679}
+      objectReference: {fileID: 0}
     - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: vikingAbility6
       value: 
@@ -281,6 +287,30 @@ PrefabInstance:
       propertyPath: vikingAbility7
       value: 
       objectReference: {fileID: 6280253947712727346}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: treeUnitButton1
+      value: 
+      objectReference: {fileID: 6280253945831421513}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: treeUnitButton2
+      value: 
+      objectReference: {fileID: 6280253947807372034}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: treeUnitButton3
+      value: 
+      objectReference: {fileID: 6280253947272001864}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: vikingUnitButton1
+      value: 
+      objectReference: {fileID: 6280253947340442919}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: vikingUnitButton2
+      value: 
+      objectReference: {fileID: 6280253946272047189}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: vikingUnitButton3
+      value: 
+      objectReference: {fileID: 6280253946203484228}
     - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: worldTreeAbility1
       value: 
@@ -296,15 +326,15 @@ PrefabInstance:
     - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: worldTreeAbility4
       value: 
-      objectReference: {fileID: 6280253947382053515}
+      objectReference: {fileID: 0}
     - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: worldTreeAbility5
       value: 
-      objectReference: {fileID: 6280253947780630464}
+      objectReference: {fileID: 0}
     - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: worldTreeAbility6
       value: 
-      objectReference: {fileID: 6280253946210400611}
+      objectReference: {fileID: 0}
     - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: worldTreeAbility7
       value: 
@@ -313,6 +343,30 @@ PrefabInstance:
       propertyPath: worldTreeAbility8
       value: 
       objectReference: {fileID: 6280253946354801368}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: treeAbilityButton1
+      value: 
+      objectReference: {fileID: 6280253945829043633}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: treeAbilityButton2
+      value: 
+      objectReference: {fileID: 6280253946354801368}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: vikingAbilityButton1
+      value: 
+      objectReference: {fileID: 6280253947051045343}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: vikingAbilityButton2
+      value: 
+      objectReference: {fileID: 6280253947712727346}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: treeManaUsageAmount.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
+      propertyPath: vikingManaUsageAmount.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
 --- !u!4 &5898767593531813966 stripped
@@ -353,6 +407,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5898767595201318945}
+    - target: {fileID: 503084222198535959, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 503084222590887570, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -526,17 +584,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6280253945857909679 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 503084221525953630, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
-  m_PrefabInstance: {fileID: 5898767593685364721}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6280253945870521210 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 503084221538516107, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
@@ -545,17 +592,6 @@ GameObject:
 --- !u!114 &6280253946203484228 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 503084221062422453, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
-  m_PrefabInstance: {fileID: 5898767593685364721}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6280253946210400611 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 503084221073331858, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
   m_PrefabInstance: {fileID: 5898767593685364721}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -606,17 +642,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6280253946778652876 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 503084221704650557, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
-  m_PrefabInstance: {fileID: 5898767593685364721}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &6280253946855524707 stripped
@@ -684,17 +709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6280253947382053515 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 503084223112942970, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
-  m_PrefabInstance: {fileID: 5898767593685364721}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6280253947514488151 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 503084222981548710, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
@@ -733,17 +747,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 503084222918651008, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
   m_PrefabInstance: {fileID: 5898767593685364721}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6280253947780630464 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 503084222706493489, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
-  m_PrefabInstance: {fileID: 5898767593685364721}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6280253947807372034 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 503084222672420083, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
