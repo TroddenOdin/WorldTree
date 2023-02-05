@@ -15,6 +15,7 @@ public class GameMusicManager : MonoBehaviour
         }
         else
         {
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
         }
 
