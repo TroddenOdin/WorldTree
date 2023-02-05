@@ -64,6 +64,7 @@ MonoBehaviour:
   _neutralMat: {fileID: 2100000, guid: a538acd5179d11d4e868c5f60d6fc52d, type: 2}
   _natureMat: {fileID: 2100000, guid: af0586f001a5e984ea7ff6f5f2311493, type: 2}
   _civilizationMat: {fileID: 2100000, guid: f0d970fc82b241541aafae2ce91229d2, type: 2}
+  progressBarPrefab: {fileID: 1034398589187500941, guid: c5c33c2e46087e34ebde4092633749ab, type: 3}
 --- !u!1 &7726112209360338507
 GameObject:
   m_ObjectHideFlags: 0

@@ -110,12 +110,15 @@ namespace WorldTree
             {
                 _currentClaim = _claimTotal;
             }
+        }
 
-            if (transform.GetChild(0).GetComponent<Renderer>().isVisible)
+        private void LateUpdate()
+        {
+            if (_renderer.isVisible)
             {
                 progressBar.GetComponent<Image>().enabled = true;
                 progressBar.GetComponent<Image>().fillAmount = _currentClaim / _claimTotal;
-                progressBar.transform.position = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 25f;
+                progressBar.transform.position = Camera.main.WorldToScreenPoint(_renderer.transform.position) + Vector3.up * 25f;
             }
             else
             {
