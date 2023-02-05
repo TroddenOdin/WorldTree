@@ -49,8 +49,6 @@ namespace WorldTree
             }
         }
         /* Another Queejon to-do list:
-         * Update dirt and grass textures
-         * Implement mana well
          * 
          * Fix faction buttons
          */
