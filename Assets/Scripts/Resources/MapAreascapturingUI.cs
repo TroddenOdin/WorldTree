@@ -12,10 +12,13 @@ public class MapAreascapturingUI : MonoBehaviour
 
         private MapArea mapArea;
         private Image progressImage;
+        private Image factionImage;
 
         private void Awake()
         {
             progressImage = transform.Find("ProgressImage").GetComponent<Image>();
+            factionImage = transform.Find("FactionImage").GetComponent<Image>();
+           
         }
 
 
@@ -24,9 +27,9 @@ public class MapAreascapturingUI : MonoBehaviour
             foreach (MapArea mapArea in mapAreaList)
             {
                 mapArea.OnPlayerEnter += MapArea_OnPlayerEnter;
-                mapArea.OnPlayerEnter += MapArea_OnPlayerExit;
+                mapArea.OnPlayerExit += MapArea_OnPlayerExit;
             }
-
+            
            
         }
 
@@ -34,6 +37,8 @@ public class MapAreascapturingUI : MonoBehaviour
         private void Update()
         {
             progressImage.fillAmount = mapArea.GetProgress();
+            progressImage.fillAmount = mapArea.GetDEFProgress();
+
         }
         private void MapArea_OnPlayerExit(object sender, EventArgs e)
         {

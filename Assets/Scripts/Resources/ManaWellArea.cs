@@ -16,6 +16,7 @@ namespace WorldTree.Core
         public event EventHandler OnPlayerExit;
 
         private List<SkyTest> skyTestList = new List<SkyTest>();
+        private List<SkyTest> skyDefList = new List<SkyTest>();
 
         private void OnTriggerEnter(Collider collider)
         {
@@ -26,10 +27,11 @@ namespace WorldTree.Core
             }
             if (collider.TryGetComponent(out SkyTest skytestT) && collider.GetComponent<SkyTest>().type == this.faction)
             {
-                skyTestList.Add(skytestT);
+                skyDefList.Add(skytestT);
                 OnPlayerEnter?.Invoke(this, EventArgs.Empty);
                 Debug.Log("Reduce Capture and Restore");
             }
+            
         }
 
         private void OnTriggerExit(Collider collider)
@@ -41,10 +43,11 @@ namespace WorldTree.Core
             }
             if (collider.TryGetComponent(out SkyTest skytestT) && collider.GetComponent<SkyTest>().type == this.faction)
             {
-                skyTestList.Remove(skytestT);
+                skyDefList.Remove(skytestT);
                 OnPlayerExit?.Invoke(this, EventArgs.Empty);
                 Debug.Log("Reduce Capture and Restore");
             }
+            
             
         }
 
@@ -52,6 +55,12 @@ namespace WorldTree.Core
         {
             return skyTestList;
         }
+
+        public List<SkyTest> GetSkyDefList()
+        {
+            return skyDefList;
+        }
+
 
     }
 }

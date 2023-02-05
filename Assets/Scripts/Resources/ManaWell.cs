@@ -4,12 +4,27 @@ using UnityEngine;
 
 
 
-
-public class ManaWell : MonoBehaviour
+namespace WorldTree.Core
 {
+    public enum ResourceTypes
+    {
+        Mana,
+        Soil,
+        Water,
+        Light,
+        Metal
+    }
+
+
+    public class ManaWell : MonoBehaviour
+    {
         public string wellName;
-     
+        public Faction faction;
+        public UnitNavMode itemMode = UnitNavMode.Selection;
+        public ResourceTypes resource;
 
 
 
+
+    }
 }

@@ -15,7 +15,7 @@ namespace WorldTree.Core
         {
             public Image uImage;
             public MapArea mapArea;
-
+           
         }
 
         [SerializeField] private List<MapAreaImage> mapAreaImgeList;
@@ -23,11 +23,20 @@ namespace WorldTree.Core
 
         private void Start()
         {
-            foreach(MapAreaImage mapAreaImage in mapAreaImgeList)
+            foreach (MapAreaImage mapAreaImage in mapAreaImgeList)
             {
                 mapAreaImage.mapArea.OnCaptured += (object sender, EventArgs e) =>
                 {
                     mapAreaImage.uImage.color = Color.magenta;
+                   
+                };
+            }
+
+            foreach (MapAreaImage mapAreaImage in mapAreaImgeList)
+            {
+                mapAreaImage.mapArea.OnEnemyCaptured += (object sender, EventArgs e) =>
+                {
+                    mapAreaImage.uImage.color = Color.red;
                 };
             }
         }

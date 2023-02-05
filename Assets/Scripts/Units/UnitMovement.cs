@@ -49,6 +49,17 @@ namespace WorldTree
                     _units[i].unit.meshAgent.SetDestination(_units[i].unit.target.transform.position);
                 }
             }
+
+
+
+          /*  if (Input.GetMouseButton(1))
+            {
+                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                 if(Physics.Raycast(ray, out hit, 100))
+                {
+                    if()
+                }
+            } */
         }
 
         private void OnDisable()

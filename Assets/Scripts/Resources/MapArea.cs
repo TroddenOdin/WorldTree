@@ -10,16 +10,15 @@ namespace WorldTree.Core
         public event EventHandler OnCaptured;
         public event EventHandler OnPlayerEnter;
         public event EventHandler OnPlayerExit;
+       
+        public event EventHandler OnEnemyCaptured;
+        public Faction faction;
 
-        public enum State
-        {
-            Neutral,
-            Captured
-        }
 
         private List<ManaWellArea> manaWellAreaList;
-        private State state;
+       
         private float progress;
+        private float enemyProgress;
 
         private void Awake()
         {
@@ -36,7 +35,7 @@ namespace WorldTree.Core
                 }
             }
 
-            state = State.Neutral;
+        
 
 
         }
@@ -46,7 +45,7 @@ namespace WorldTree.Core
             bool hasPlayerInside = false;
             foreach (ManaWellArea manaWellArea in manaWellAreaList)
             {
-                if(manaWellArea.GetSkyTestList().Count > 0)
+                if(manaWellArea.GetSkyTestList().Count > 0 || manaWellArea.GetSkyDefList().Count > 0)
                 {
                     hasPlayerInside = true;
                 }
@@ -64,10 +63,11 @@ namespace WorldTree.Core
 
         private void Update() {
 
-            switch (state)
+            switch (faction)
             {
-                case State.Neutral:
+                case Faction.Nature:
                     List<SkyTest> playerMapAreasInsideList = new List<SkyTest>();
+                    List<SkyTest> defMapAreasInsideList = new List<SkyTest>();
 
                     int playerCountInsideManaWellArea = 0;
                     foreach (ManaWellArea manaWellArea in manaWellAreaList)
@@ -82,20 +82,148 @@ namespace WorldTree.Core
                         playerCountInsideManaWellArea += manaWellArea.GetSkyTestList().Count;
                     }
 
-                    float progressSpeed = 1f;
-                    progress += playerCountInsideManaWellArea * progressSpeed * Time.deltaTime;
+                    float enemyProgressSpeed = .10f;
+                    enemyProgress += playerCountInsideManaWellArea * enemyProgressSpeed * Time.deltaTime;
 
+                    int defCountInsideManaWellArea = 0;
+                    foreach (ManaWellArea manaWellArea in manaWellAreaList)
+                    {
+                        foreach (SkyTest skyTest in manaWellArea.GetSkyDefList())
+                        {
+                            if (!defMapAreasInsideList.Contains(skyTest))
+                            {
+                                defMapAreasInsideList.Add(skyTest);
+                            }
+                        }
+                        defCountInsideManaWellArea += manaWellArea.GetSkyDefList().Count;
+                    }
+
+                    float defendCapSpeed = .10f;
+                    progress += defCountInsideManaWellArea * defendCapSpeed * Time.deltaTime;
 
                     Debug.Log("playerCountInsideManaWellArea: " + playerCountInsideManaWellArea + "; progress: " + progress);
 
-                    if(progress >= 5f)
+                    if (enemyProgress >= 1f)
                     {
-                        state = State.Captured;
+                        faction = Faction.Civilization;
+                        progress = 0f;
+                        OnEnemyCaptured?.Invoke(this, EventArgs.Empty);
+                        Debug.Log("Captured");
+                    }
+                    if (progress >= 1f)
+                    {
+                        faction = Faction.Nature;
+                        enemyProgress = 0f;
+                        OnCaptured?.Invoke(this, EventArgs.Empty);
+                        Debug.Log("Regained");
+                    }
+                    break;
+
+                case Faction.Neutral:
+                    List<SkyTest> nPlayerMapAreasInsideList = new List<SkyTest>();
+                    List<SkyTest> nDefMapAreasInsideList = new List<SkyTest>();
+
+                    int nPlayerCountInsideManaWellArea = 0;
+                    foreach (ManaWellArea manaWellArea in manaWellAreaList)
+                    {
+                        foreach (SkyTest skyTest in manaWellArea.GetSkyTestList())
+                        {
+                            if (!nPlayerMapAreasInsideList.Contains(skyTest))
+                            {
+                                nPlayerMapAreasInsideList.Add(skyTest);
+                            }
+                        }
+                        nPlayerCountInsideManaWellArea += manaWellArea.GetSkyTestList().Count;
+                    }
+
+                    float progressSpeed = .10f;
+                    progress += nPlayerCountInsideManaWellArea * progressSpeed * Time.deltaTime;
+
+                    int nDefCountInsideManaWellArea = 0;
+                    foreach (ManaWellArea manaWellArea in manaWellAreaList)
+                    {
+                        foreach (SkyTest skyTest in manaWellArea.GetSkyDefList())
+                        {
+                            if (!nDefMapAreasInsideList.Contains(skyTest))
+                            {
+                                nDefMapAreasInsideList.Add(skyTest);
+                            }
+                        }
+                        nDefCountInsideManaWellArea += manaWellArea.GetSkyDefList().Count;
+                    }
+
+                    float eCapSpeed = .10f;
+                    enemyProgress += nDefCountInsideManaWellArea * eCapSpeed * Time.deltaTime;
+
+                    Debug.Log("playerCountInsideManaWellArea: " + nDefCountInsideManaWellArea + "; progress: " + enemyProgress);
+
+                    if(progress >= 1f)
+                    {
+                        faction = Faction.Nature;
+                        enemyProgress = 0f;
                         OnCaptured?.Invoke(this, EventArgs.Empty);
                         Debug.Log("Captured");
                     }
+                    if (enemyProgress >= 1f)
+                    {
+                        faction = Faction.Civilization;
+                        progress = 0f;
+                        OnEnemyCaptured?.Invoke(this, EventArgs.Empty);
+                        Debug.Log("Captured");
+                    }
                     break;
-                case State.Captured:
+                case Faction.Civilization:
+                    List<SkyTest> vPlayerMapAreasInsideList = new List<SkyTest>();
+                    List<SkyTest> vDefMapAreasInsideList = new List<SkyTest>();
+
+                    int vPlayerCountInsideManaWellArea = 0;
+                    foreach (ManaWellArea manaWellArea in manaWellAreaList)
+                    {
+                        foreach (SkyTest skyTest in manaWellArea.GetSkyTestList())
+                        {
+                            if (!vPlayerMapAreasInsideList.Contains(skyTest))
+                            {
+                                vPlayerMapAreasInsideList.Add(skyTest);
+                            }
+                        }
+                        vPlayerCountInsideManaWellArea += manaWellArea.GetSkyTestList().Count;
+                    }
+
+                    float vEnemyProgressSpeed = .10f;
+                    enemyProgress += vPlayerCountInsideManaWellArea * vEnemyProgressSpeed * Time.deltaTime;
+
+                    int vDefCountInsideManaWellArea = 0;
+                    foreach (ManaWellArea manaWellArea in manaWellAreaList)
+                    {
+                        foreach (SkyTest skyTest in manaWellArea.GetSkyDefList())
+                        {
+                            if (!vDefMapAreasInsideList.Contains(skyTest))
+                            {
+                                vDefMapAreasInsideList.Add(skyTest);
+                            }
+                        }
+                        vDefCountInsideManaWellArea += manaWellArea.GetSkyDefList().Count;
+                    }
+
+                    float vDefendCapSpeed = .10f;
+                    progress += vDefCountInsideManaWellArea * vDefendCapSpeed * Time.deltaTime;
+
+                    Debug.Log("playerCountInsideManaWellArea: " + vPlayerCountInsideManaWellArea + "; progress: " + progress);
+
+                    if (enemyProgress >= 1f)
+                    {
+                        faction = Faction.Nature;
+                        progress = 0f;
+                        OnEnemyCaptured?.Invoke(this, EventArgs.Empty);
+                        Debug.Log("Captured");
+                    }
+                    if (progress >= 1f)
+                    {
+                        faction = Faction.Civilization;
+                        enemyProgress = 0f;
+                        OnCaptured?.Invoke(this, EventArgs.Empty);
+                        Debug.Log("Regained");
+                    }
                     break;
             }
            
@@ -104,6 +232,11 @@ namespace WorldTree.Core
         public float GetProgress()
         {
             return progress;
+        }
+
+        public float GetDEFProgress()
+        {
+            return enemyProgress;
         }
 
     }
