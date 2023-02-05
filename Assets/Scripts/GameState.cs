@@ -16,6 +16,10 @@ namespace WorldTree
         public int _internalFaction;
         public Faction selectedFaction => (Faction)_internalFaction;
 
+        private Player naturePlayer;
+
+        [SerializeField] private GameObject loseScreen;
+
         private void Start()
         {
             if (instance == null) instance = this;
@@ -27,6 +31,25 @@ namespace WorldTree
             playerCount = 0;
             currentState = GamePlayState.WaitingForPlayer;
             _internalFaction = (int)Faction.Neutral;
+        }
+
+        private void Update()
+        {
+            if(naturePlayer)
+            {
+                if(naturePlayer.currentHealth <= 0f)
+                {
+                    loseScreen.SetActive(true);
+                }
+            }
+        }
+
+        public void HandleNewPlayer(Player player)
+        {
+            if(player.faction == Faction.Nature)
+            {
+                naturePlayer = player;
+            }
         }
 
         public void PlayerConnect()
