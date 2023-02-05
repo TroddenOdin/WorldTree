@@ -2,6 +2,7 @@ using Coherence.Runtime;
 using Coherence.Toolkit;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace WorldTree
@@ -19,6 +20,9 @@ namespace WorldTree
         private Player naturePlayer;
 
         [SerializeField] private GameObject loseScreen;
+        [SerializeField] private GameObject winScreen;
+
+        bool gameFinished = false;
 
         private void Start()
         {
@@ -35,11 +39,18 @@ namespace WorldTree
 
         private void Update()
         {
-            if(naturePlayer)
+            if(naturePlayer && !gameFinished)
             {
                 if(naturePlayer.currentHealth <= 0f)
                 {
                     loseScreen.SetActive(true);
+                    gameFinished = true;
+                }
+
+                if(ManaWell.manaWells.Where(well => well.allegiance == Faction.Nature).Count() >= ManaWell.manaWells.Count - 1)
+                {
+                    winScreen.SetActive(true);
+                    gameFinished = true;
                 }
             }
         }
