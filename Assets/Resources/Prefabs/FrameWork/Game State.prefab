@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCount: 0
   _internalFaction: 0
+  loseScreen: {fileID: 0}
 --- !u!114 &5677691500835819830
 MonoBehaviour:
   m_ObjectHideFlags: 0
