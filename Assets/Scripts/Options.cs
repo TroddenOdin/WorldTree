@@ -37,8 +37,8 @@ public class Options : MonoBehaviour
     public void setMusic(float music)
     {
         musicAudioMixer.SetFloat("Music", music);
-        
         PlayerPrefs.SetFloat("Music", music);
+
         PlayerPrefs.Save();       
 
 
@@ -50,6 +50,7 @@ public class Options : MonoBehaviour
     {
         soundAudioMixer.SetFloat("Sound", sound);
         PlayerPrefs.SetFloat("Sound", sound);
+        PlayerPrefs.Save();
         
         
 
@@ -57,6 +58,8 @@ public class Options : MonoBehaviour
     public void SetVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("Music");
+        PlayerPrefs.GetFloat("Music");
+        PlayerPrefs.Save();
         
     }
 

@@ -438,9 +438,21 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3294455609995500503, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294455609995500503, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294455609995500503, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5898767595201318945}
+    - target: {fileID: 3294455609995500503, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3294455609995500503, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Forfeit
