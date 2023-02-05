@@ -5,7 +5,7 @@ using UnityEngine;
 public class FogOfWar : MonoBehaviour
 {
     public GameObject fogOfWarPlane;
-    public Transform fogPlayer;
+    private Transform fogPlayer;
     public LayerMask fogLayer;
     public float radius = 5f;
     private float radiusSqr { get { return radius * radius; } }
@@ -18,6 +18,7 @@ public class FogOfWar : MonoBehaviour
     void Start()
     {
         Initialize();
+        //fogPlayer = GameObject.FindGameObjectWithTag("Unit").transform;
     }
 
     // Update is called once per frame
