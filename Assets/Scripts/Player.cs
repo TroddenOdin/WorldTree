@@ -16,12 +16,13 @@ public class Player : MonoBehaviour
     public int maxMana = 100;
     public int minMana = 0;
 
-
+    
 
     // Start is called before the first frame update
     void Start()
     {
         playerUi.SetMaxHealth();
         playerUi.SetMaxMana();
+
     }
 }
