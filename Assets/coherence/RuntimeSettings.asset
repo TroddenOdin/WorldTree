@@ -29,5 +29,5 @@ MonoBehaviour:
   useDebugStreams: 0
   organizationID: cfbln0tbo1hpv4h187m0
   projectID: cfbln0tbo1hpv4h187mg
-  projectName: Default Project
+  projectName: World Tree
   playApiEndpoint: https://api.prod.coherence.io/v1/play

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace WorldTree
 {
@@ -19,6 +20,9 @@ namespace WorldTree
         private CameraController _cameraController;
         private Player _player;
 
+        public UnityEvent<Player> OnCreate;
+
+
         private void Start()
         {
             _selections.gameObject.SetActive(false);
@@ -35,6 +39,8 @@ namespace WorldTree
             _cameraController.enabled = true;
             _player = GetComponent<Player>();
             _player.SetFaction(_faction);
+
+            OnCreate.Invoke(_player);
         }
     }
 }
