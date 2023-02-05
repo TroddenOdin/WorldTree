@@ -85,18 +85,6 @@ namespace Coherence.Generated
 
 			return (val, mask, 0);
 		}
-		public static (WorldPosition, uint, uint?) DeserializeArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0(InProtocolBitStream bitStream)
-		{
-			var mask = (uint)0;
-			var val = new WorldPosition();
-			if (bitStream.ReadMask())
-			{
-				val.value = (bitStream.ReadVector3(FloatMeta.NoCompression())).ToUnityVector3();
-				mask |= 0b00000000000000000000000000000001;
-			}
-
-			return (val, mask, 0);
-		}
 		public static (WorldPosition, uint, uint?) DeserializeArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0(InProtocolBitStream bitStream)
 		{
 			var mask = (uint)0;

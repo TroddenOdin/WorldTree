@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace WorldTree
 {
+    [RequireComponent(typeof(Player))]
     public class PlayerOrchestrator : MonoBehaviour
     {
         [SerializeField]
@@ -16,6 +17,7 @@ namespace WorldTree
         private UnitMovement _movement;
         [SerializeField]
         private CameraController _cameraController;
+        private Player _player;
 
         private void Start()
         {
@@ -31,6 +33,8 @@ namespace WorldTree
             _selections.gameObject.SetActive(true);
             _movement.gameObject.SetActive(true);
             _cameraController.enabled = true;
+            _player = GetComponent<Player>();
+            _player.SetFaction(_faction);
         }
 
         [SerializeField]

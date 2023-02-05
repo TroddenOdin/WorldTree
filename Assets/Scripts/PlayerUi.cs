@@ -19,6 +19,9 @@ public class PlayerUi : MonoBehaviour
     public Image vikingManaFill;
     public Slider vikingManaSlider;
 
+    [SerializeField]
+    private AnimationCurve fillTweeningCurve;
+
     public GameObject worldTreeCanvas;
     public GameObject vikingCanvas;
     public GameObject factionPickingCanvas;
@@ -31,7 +34,7 @@ public class PlayerUi : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         worldTreeCanvas.SetActive(false);
         vikingCanvas.SetActive(false);
@@ -61,17 +64,17 @@ public class PlayerUi : MonoBehaviour
 
     public void SetHealth()
     {
-        worldTreeHealthSlider.value = player.currentHealth;
+        worldTreeHealthSlider.value = fillTweeningCurve.Evaluate((player.currentHealth - player.minHealth) / (player.maxHealth - player.minHealth)) * player.maxHealth;
 
-        vikingHealthSlider.value = player.currentHealth;
+        vikingHealthSlider.value = fillTweeningCurve.Evaluate((player.currentHealth - player.minHealth) / (player.maxHealth - player.minHealth)) * player.maxHealth;
     }
 
     public void SetMana()
     {
        
-        worldTreeManaSlider.value = player.currentMana;
+        worldTreeManaSlider.value = fillTweeningCurve.Evaluate((player.currentMana - player.minMana) / (player.maxMana - player.minMana)) * player.maxMana;
 
-        vikingManaSlider.value = player.currentMana;
+        vikingManaSlider.value = fillTweeningCurve.Evaluate((player.currentMana - player.minMana) / (player.maxMana - player.minMana)) * player.maxMana;
     }
 
     public void ChooseWorldTree(bool worldTreeSelected = true)
@@ -139,6 +142,8 @@ public class PlayerUi : MonoBehaviour
         {
             ShowPauseMenu();
         }
+        SetHealth();
+        SetMana();
     }   
     
     

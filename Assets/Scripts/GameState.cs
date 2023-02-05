@@ -32,13 +32,11 @@ namespace WorldTree
         public void PlayerConnect()
         {
             ++playerCount;
-            Debug.Log(playerCount);
         }
 
         public void PlayerDisconnect()
         {
             --playerCount;
-            Debug.Log(playerCount);
         }
 
         public void PlayerSelectFaction(Faction faction)

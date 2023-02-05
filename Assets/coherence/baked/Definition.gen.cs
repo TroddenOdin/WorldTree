@@ -16,7 +16,7 @@ namespace Coherence.Generated
 
 	public class Definition : IDefinition
 	{
-		public const string schemaId = "20ad163b94ed26c98d6a18b269de1bb559480741";
+		public const string schemaId = "574703057f11d5953abe3719dc4d608e53f86844";
 		public const uint InternalWorldPosition = 0;
 		public const uint InternalWorldOrientation = 1;
 		public const uint InternalLocalUser = 2;
@@ -122,10 +122,9 @@ namespace Coherence.Generated
 		public const uint InternalGame__char_32_State_WorldTree__char_46_GameState_3658229590979758511 = 102;
 		public const uint InternalArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0 = 103;
 		public const uint InternalArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_LOD0 = 104;
-		public const uint InternalArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0 = 105;
-		public const uint InternalArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0 = 106;
-		public const uint InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0 = 107;
-		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 108;
+		public const uint InternalArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0 = 105;
+		public const uint InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0 = 106;
+		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 107;
 		public const uint InternalAuthorityRequest = 0;
 		public const uint InternalAuthorityTransfer = 1;
 		public const uint InternalQuerySynced = 2;
@@ -239,10 +238,9 @@ namespace Coherence.Generated
 			{ 102, "Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511" },
 			{ 103, "ArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0" },
 			{ 104, "ArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_LOD0" },
-			{ 105, "ArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0" },
-			{ 106, "ArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0" },
-			{ 107, "ArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0" },
-			{ 108, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
+			{ 105, "ArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0" },
+			{ 106, "ArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0" },
+			{ 107, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
 		};
 
 		public static string ComponentNameForTypeId(uint typeId)
@@ -474,8 +472,6 @@ namespace Coherence.Generated
 					return WorldPosition.DeserializeArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_LOD0:
 					return Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511.DeserializeArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_LOD0(inProtocolStream);
-				case InternalArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0:
-					return WorldPosition.DeserializeArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0:
