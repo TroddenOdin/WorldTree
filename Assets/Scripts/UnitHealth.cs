@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class UnitHealth : MonoBehaviour
 {
-    public float health;
-
     [SerializeField] private GameObject healthBarPrefab;
     private GameObject healthBar = null;
 
