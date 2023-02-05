@@ -83,7 +83,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5921134435652645913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.90872, y: 0.931, z: -37.04261}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -174,7 +174,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 2
   m_WalkableMask: 184
   m_ObstacleAvoidanceType: 4
 --- !u!114 &5921134435652645910
@@ -272,7 +272,7 @@ MonoBehaviour:
   InterpolationLocation: 1
   bakedScriptType: Coherence.Generated.CoherenceSyncSoldier, Assembly-CSharp
   approveAuthorityTransferRequests: 1
-  simulationType: 2
+  simulationType: 0
   authorityTransferType: 2
   orphanedBehavior: 0
   lifetimeType: 0
@@ -510,4 +510,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c2b362c23b32d44ac72caa499ca1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarPrefab: {fileID: 6274221135833547738, guid: 68127dbba4d5d7a46b065635a2a03a0a, type: 3}
+  _healthBarPrefab: {fileID: 6274221135833547738, guid: 68127dbba4d5d7a46b065635a2a03a0a, type: 3}

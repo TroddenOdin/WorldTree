@@ -33,7 +33,6 @@ namespace WorldTree
             _cameraController.enabled = true;
         }
 
-#if UNITY_EDITOR
         [SerializeField]
         private GameObject _soldierPrefabNature;
         [SerializeField]
@@ -50,6 +49,5 @@ namespace WorldTree
          * Fix authority bug when unit is killed
          * 
          */
-#endif
     }
 }

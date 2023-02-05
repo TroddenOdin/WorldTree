@@ -1,34 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UnitHealth : MonoBehaviour
+namespace WorldTree
 {
-    [SerializeField] private GameObject healthBarPrefab;
-    private GameObject healthBar = null;
-
-    // Start is called before the first frame update
-    void Start()
+    [RequireComponent(typeof(Unit))]
+    public class UnitHealth : MonoBehaviour
     {
-        healthBar = HealthBarContainer.container.CreateHealthBar(healthBarPrefab);
-    }
+        [SerializeField] private GameObject _healthBarPrefab;
+        private GameObject _healthBar;
+        private Slider _slider;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (GetComponent<Renderer>().isVisible)
+        private Unit _unit;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            healthBar.SetActive(true);
-            healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 25f;
-        }
-        else
-        {
-            healthBar.SetActive(false);
-        }
-    }
+            _unit = GetComponent<Unit>();
 
-    private void OnDestroy()
-    {
-        Destroy(healthBar);
+            _healthBar = HealthBarContainer.container.CreateHealthBar(_healthBarPrefab);
+            _slider = _healthBar.GetComponent<Slider>();
+            _slider.maxValue = _unit.stats.health;
+            _slider.minValue = 0;
+            _slider.value = _unit.currentHealth;
+        }
+
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (GetComponent<Renderer>().isVisible)
+            {
+                _healthBar.SetActive(true);
+                _healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 25f;
+                _slider.value = _unit.currentHealth;
+            }
+            else
+            {
+                _healthBar.SetActive(false);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            Destroy(_healthBar);
+        }
     }
 }

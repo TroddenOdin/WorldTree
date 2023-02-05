@@ -13,6 +13,7 @@ namespace WorldTree
         public SOUnit stats => _stats;
         private float _nextAttackTime;
         private float _currentHealth;
+        public float currentHealth => _currentHealth;
         private UnitNavMode _navMode;
         public UnitNavMode navMode => _navMode;
 
