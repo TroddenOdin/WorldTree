@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4a3e7560b5bb9469c57f203771c62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: {fileID: 0}
   player: {fileID: 8802278226113716469}
   worldTreeHealthFill: {fileID: 6280253947097455286}
   worldTreeHealthSlider: {fileID: 6280253946720838793}
@@ -69,6 +68,18 @@ MonoBehaviour:
   OnFactionSelect:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WorldTree.GameState, Assembly-CSharp
+        m_MethodName: PlayerSelectFaction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 7456600510704238639}
         m_TargetAssemblyTypeName: WorldTree.PlayerOrchestrator, Assembly-CSharp
         m_MethodName: EnablePlayerScripts
@@ -104,18 +115,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WorldTree.GameStateReference, Assembly-CSharp
-        m_MethodName: PlayerSelectFaction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &5898767595201318951
 MonoBehaviour:

@@ -100,9 +100,10 @@ public class PlayerUi : MonoBehaviour
     public void ShowFactionDialog()
     {
         factionPickingCanvas.SetActive(true);
-        Debug.Log(GameState.instance.selectedFaction);
-        if (GameState.instance.selectedFaction != Faction.Neutral)
-            factionPickingCanvas.transform.GetChild(0).GetChild(GameState.instance.selectedFaction == Faction.Nature ? 1 : 2).gameObject.SetActive(false);
+        // Supposed to hide buttons, but doesn't work
+        //Debug.Log(GameState.instance.selectedFaction);
+        //if (GameState.instance.selectedFaction != Faction.Neutral)
+        //    factionPickingCanvas.transform.GetChild(0).GetChild(GameState.instance.selectedFaction == Faction.Nature ? 1 : 2).gameObject.SetActive(false);
     }
 
     public void ShowPauseMenu()

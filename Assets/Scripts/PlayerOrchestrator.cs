@@ -45,10 +45,10 @@ namespace WorldTree
             }
         }
         /* Another Queejon to-do list:
-         * Fix P2 faction choice based off P1 faction choice
          * Update dirt and grass textures
          * Implement mana well
          * 
+         * Fix faction buttons
          */
     }
 }
