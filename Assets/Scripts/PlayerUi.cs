@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using WorldTree;
+using UnityEngine.SceneManagement;
 
 public class PlayerUi : MonoBehaviour
 {
@@ -107,7 +108,7 @@ public class PlayerUi : MonoBehaviour
 
     public void Forfeit()
     {
-
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void BackButton()
@@ -115,6 +116,8 @@ public class PlayerUi : MonoBehaviour
         optionsMenuCanvas.SetActive(false);
         pauseMenuCanvas.SetActive(true);
     }
+
+    
 
     private void Update()
     {
