@@ -16,7 +16,7 @@ namespace Coherence.Generated
 
 	public class Definition : IDefinition
 	{
-		public const string schemaId = "2560eb5620ece6f66975d28d6cfc96c8b188ad3c";
+		public const string schemaId = "2fbeb59ded361a4186a96c25f29427e2c0a858bf";
 		public const uint InternalWorldPosition = 0;
 		public const uint InternalWorldOrientation = 1;
 		public const uint InternalLocalUser = 2;
@@ -119,24 +119,17 @@ namespace Coherence.Generated
 		public const uint InternalGenericFieldULong3 = 99;
 		public const uint InternalGenericFieldColor0 = 100;
 		public const uint InternalGenericFieldColor1 = 101;
-		public const uint InternalArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0 = 102;
-		public const uint InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0 = 103;
-		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 104;
+		public const uint InternalArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0 = 102;
+		public const uint InternalArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0 = 103;
+		public const uint InternalArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0 = 104;
+		public const uint InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0 = 105;
+		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 106;
 		public const uint InternalAuthorityRequest = 0;
 		public const uint InternalAuthorityTransfer = 1;
 		public const uint InternalQuerySynced = 2;
 		public const uint InternalAdoptOrphan = 3;
 		public const uint InternalPersistenceReady = 4;
 		public const uint InternalGenericCommand = 5;
-		public const uint InternalCivilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c = 6;
-		public const uint InternalCivilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783 = 7;
-		public const uint InternalCivilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb = 8;
-		public const uint InternalNature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c = 9;
-		public const uint InternalNature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783 = 10;
-		public const uint InternalNature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb = 11;
-		public const uint InternalSoldier_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c = 12;
-		public const uint InternalSoldier_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783 = 13;
-		public const uint InternalSoldier_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb = 14;
 
 		private static readonly Dictionary<uint, string> componentNamesForTypeIds = new Dictionary<uint, string>() {
 			{ 0, "WorldPosition" },
@@ -241,9 +234,11 @@ namespace Coherence.Generated
 			{ 99, "GenericFieldULong3" },
 			{ 100, "GenericFieldColor0" },
 			{ 101, "GenericFieldColor1" },
-			{ 102, "ArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0" },
-			{ 103, "ArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0" },
-			{ 104, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
+			{ 102, "ArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0" },
+			{ 103, "ArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0" },
+			{ 104, "ArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0" },
+			{ 105, "ArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0" },
+			{ 106, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
 		};
 
 		public static string ComponentNameForTypeId(uint typeId)
@@ -469,6 +464,10 @@ namespace Coherence.Generated
 					return GenericFieldColor0.Deserialize(inProtocolStream);
 				case InternalGenericFieldColor1:
 					return GenericFieldColor1.Deserialize(inProtocolStream);
+				case InternalArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0:
+					return WorldPosition.DeserializeArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0(inProtocolStream);
+				case InternalArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0:
+					return WorldPosition.DeserializeArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0:
@@ -810,24 +809,6 @@ namespace Coherence.Generated
 					return PersistenceReady.Deserialize(bitStream);
 				case Definition.InternalGenericCommand:
 					return GenericCommand.Deserialize(bitStream);
-				case Definition.InternalCivilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c:
-					return Civilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c.Deserialize(bitStream);
-				case Definition.InternalCivilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783:
-					return Civilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783.Deserialize(bitStream);
-				case Definition.InternalCivilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb:
-					return Civilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb.Deserialize(bitStream);
-				case Definition.InternalNature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c:
-					return Nature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c.Deserialize(bitStream);
-				case Definition.InternalNature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783:
-					return Nature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783.Deserialize(bitStream);
-				case Definition.InternalNature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb:
-					return Nature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb.Deserialize(bitStream);
-				case Definition.InternalSoldier_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c:
-					return Soldier_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c.Deserialize(bitStream);
-				case Definition.InternalSoldier_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783:
-					return Soldier_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783.Deserialize(bitStream);
-				case Definition.InternalSoldier_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb:
-					return Soldier_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb.Deserialize(bitStream);
 				default:
 					break;
 			}
@@ -906,33 +887,6 @@ namespace Coherence.Generated
 					break;
 				case Definition.InternalGenericCommand:
 					GenericCommand.Serialize((GenericCommand)data, bitStream);
-					break;
-				case Definition.InternalCivilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c:
-					Civilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c.Serialize((Civilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c)data, bitStream);
-					break;
-				case Definition.InternalCivilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783:
-					Civilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783.Serialize((Civilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783)data, bitStream);
-					break;
-				case Definition.InternalCivilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb:
-					Civilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb.Serialize((Civilization__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb)data, bitStream);
-					break;
-				case Definition.InternalNature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c:
-					Nature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c.Serialize((Nature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c)data, bitStream);
-					break;
-				case Definition.InternalNature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783:
-					Nature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783.Serialize((Nature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783)data, bitStream);
-					break;
-				case Definition.InternalNature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb:
-					Nature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb.Serialize((Nature__char_32_Soldier__char_32_Variant_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb)data, bitStream);
-					break;
-				case Definition.InternalSoldier_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c:
-					Soldier_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c.Serialize((Soldier_WorldTree__char_46_Unit__char_46_Damage_5ab2979e_eb8b_45ea_8097_91e018ffa77c)data, bitStream);
-					break;
-				case Definition.InternalSoldier_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783:
-					Soldier_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783.Serialize((Soldier_WorldTree__char_46_Unit__char_46_Heal_e283d7c7_4ebf_493f_9823_17f79a943783)data, bitStream);
-					break;
-				case Definition.InternalSoldier_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb:
-					Soldier_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb.Serialize((Soldier_WorldTree__char_46_Unit__char_46_Die_6661d113_8f98_49d6_a6f6_fca2d95730eb)data, bitStream);
 					break;
 				default:
 					break;

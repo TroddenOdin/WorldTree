@@ -1,3 +1,4 @@
+using Coherence.Toolkit;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -137,11 +138,15 @@ namespace WorldTree
 
         public void Die()
         {
-            OnDeath.Invoke(this);
+            CoherenceSync sync = GetComponent<CoherenceSync>();
+            if(sync.HasStateAuthority)
+            {
+                OnDeath.Invoke(this);
 
-            _unitPositions[_stats.faction].Remove(this);
+                _unitPositions[_stats.faction].Remove(this);
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 }

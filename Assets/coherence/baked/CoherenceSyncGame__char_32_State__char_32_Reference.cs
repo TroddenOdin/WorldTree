@@ -24,9 +24,9 @@ namespace Coherence.Generated
 
 
 	[Preserve]
-	[AddComponentMenu("coherence/Baked/Baked 'Nature Soldier Variant' (auto assigned)")]
+	[AddComponentMenu("coherence/Baked/Baked 'Game State Reference' (auto assigned)")]
 	[RequireComponent(typeof(CoherenceSync))]
-	public class CoherenceSyncNature__char_32_Soldier__char_32_Variant : CoherenceSyncBaked
+	public class CoherenceSyncGame__char_32_State__char_32_Reference : CoherenceSyncBaked
 	{
 		private CoherenceSync coherenceSync;
 		private Logger logger;
@@ -41,7 +41,7 @@ namespace Coherence.Generated
 			coherenceSync = GetComponent<CoherenceSync>();
 			coherenceSync.usingReflection = false;
 
-			logger = coherenceSync.logger.With<CoherenceSyncNature__char_32_Soldier__char_32_Variant>();
+			logger = coherenceSync.logger.With<CoherenceSyncGame__char_32_State__char_32_Reference>();
 		}
 
 		public override List<ICoherenceComponentData> CreateEntity()
@@ -80,7 +80,7 @@ namespace Coherence.Generated
 			switch(command)
 			{
 				default:
-					logger.Warning($"[CoherenceSyncNature__char_32_Soldier__char_32_Variant] Unhandled command: {command.GetType()}.");
+					logger.Warning($"[CoherenceSyncGame__char_32_State__char_32_Reference] Unhandled command: {command.GetType()}.");
 					break;
 			}
 		}

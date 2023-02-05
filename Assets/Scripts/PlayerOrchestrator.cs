@@ -46,7 +46,8 @@ namespace WorldTree
         }
         /* Another Queejon to-do list:
          * Fix P2 faction choice based off P1 faction choice
-         * Fix authority bug when unit is killed
+         * Update dirt and grass textures
+         * Implement mana well
          * 
          */
     }
