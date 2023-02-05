@@ -16,7 +16,7 @@ namespace Coherence.Generated
 
 	public class Definition : IDefinition
 	{
-		public const string schemaId = "2fbeb59ded361a4186a96c25f29427e2c0a858bf";
+		public const string schemaId = "20ad163b94ed26c98d6a18b269de1bb559480741";
 		public const uint InternalWorldPosition = 0;
 		public const uint InternalWorldOrientation = 1;
 		public const uint InternalLocalUser = 2;
@@ -119,11 +119,13 @@ namespace Coherence.Generated
 		public const uint InternalGenericFieldULong3 = 99;
 		public const uint InternalGenericFieldColor0 = 100;
 		public const uint InternalGenericFieldColor1 = 101;
-		public const uint InternalArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0 = 102;
-		public const uint InternalArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0 = 103;
-		public const uint InternalArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0 = 104;
-		public const uint InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0 = 105;
-		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 106;
+		public const uint InternalGame__char_32_State_WorldTree__char_46_GameState_3658229590979758511 = 102;
+		public const uint InternalArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0 = 103;
+		public const uint InternalArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_LOD0 = 104;
+		public const uint InternalArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0 = 105;
+		public const uint InternalArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0 = 106;
+		public const uint InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0 = 107;
+		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 108;
 		public const uint InternalAuthorityRequest = 0;
 		public const uint InternalAuthorityTransfer = 1;
 		public const uint InternalQuerySynced = 2;
@@ -234,11 +236,13 @@ namespace Coherence.Generated
 			{ 99, "GenericFieldULong3" },
 			{ 100, "GenericFieldColor0" },
 			{ 101, "GenericFieldColor1" },
-			{ 102, "ArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0" },
-			{ 103, "ArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0" },
-			{ 104, "ArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0" },
-			{ 105, "ArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0" },
-			{ 106, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
+			{ 102, "Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511" },
+			{ 103, "ArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0" },
+			{ 104, "ArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_LOD0" },
+			{ 105, "ArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0" },
+			{ 106, "ArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0" },
+			{ 107, "ArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0" },
+			{ 108, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
 		};
 
 		public static string ComponentNameForTypeId(uint typeId)
@@ -464,8 +468,12 @@ namespace Coherence.Generated
 					return GenericFieldColor0.Deserialize(inProtocolStream);
 				case InternalGenericFieldColor1:
 					return GenericFieldColor1.Deserialize(inProtocolStream);
+				case InternalGame__char_32_State_WorldTree__char_46_GameState_3658229590979758511:
+					return Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511.Deserialize(inProtocolStream);
 				case InternalArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_WorldPosition_LOD0(inProtocolStream);
+				case InternalArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_LOD0:
+					return Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511.DeserializeArchetypeGame__char_32_State_c4db98e625238cb4abed48cda8fae98e_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_LOD0(inProtocolStream);
 				case InternalArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeGame__char_32_State__char_32_Reference_1ab61af51f8fd1340afb5b4c00e0954e_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0:
@@ -789,6 +797,9 @@ namespace Coherence.Generated
 					break;
 				case InternalGenericFieldColor1:
 					GenericFieldColor1.Serialize((GenericFieldColor1)data, mask, protocolStream);
+					break;
+				case InternalGame__char_32_State_WorldTree__char_46_GameState_3658229590979758511:
+					Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511.Serialize((Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511)data, mask, protocolStream);
 					break;
 			}
 		}

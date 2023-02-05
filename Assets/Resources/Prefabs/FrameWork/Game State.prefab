@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1740095239704032089}
   - component: {fileID: 3658229590979758511}
   - component: {fileID: 5677691500835819830}
-  - component: {fileID: 8495874389052998433}
+  - component: {fileID: 1702262954941262527}
   m_Layer: 0
   m_Name: Game State
   m_TagString: Untagged
@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e832ce49618acc489579f71f54fbf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCount: 0
+  _internalFaction: 0
 --- !u!114 &5677691500835819830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,18 +106,20 @@ MonoBehaviour:
   InterpolationLocation: 1
   bakedScriptType: Coherence.Generated.CoherenceSyncGame__char_32_State, Assembly-CSharp
   approveAuthorityTransferRequests: 1
-  simulationType: 2
+  simulationType: 0
   authorityTransferType: 2
   orphanedBehavior: 0
   lifetimeType: 1
   uniquenessType: 1
-  coherenceUUID: cd2f2953-6d48-4d29-931c-792bb13d4b76
+  coherenceUUID: 403c0824-a92b-4b28-bd17-f14865fcf5d2
   destructionBehavior: 0
   preserveChildren: 0
   reflectionBindings: []
   customBindings: []
   bindings:
   - rid: 1457050938961035272
+  - rid: 1457050938961035277
+  - rid: 1457050938961035306
   onNetworkedInstantiation:
     m_PersistentCalls:
       m_Calls: []
@@ -182,7 +186,99 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
---- !u!114 &8495874389052998433
+    - rid: 1457050938961035277
+      type: {class: IntBinding, ns: Coherence.Toolkit.Bindings.ValueBindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 1457050938961035278
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 31b842c4-16a3-4d4c-a723-eedf37551860
+        archetypeData:
+          type: 1
+          minRange: -2147483648
+          maxRange: 2147483647
+          sampleRate: 20
+          floatCompression: 0
+          fields:
+          - type: 1
+            bits: 32
+            minRange: -2147483648
+            maxRange: 2147483647
+            precision: 0
+            floatCompression: 0
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 3658229590979758511}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 1457050938961035278
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: playerCount
+        monoAssemblyType: System.Int32, mscorlib
+        required: 1
+        enforcesLODingWhenFieldsOverriden: 1
+        valueSyncCallbackName: 
+        memberType: 4
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: WorldTree.GameState, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.ValueBindings.IntBinding,
+            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: PlayerCount
+        oldParameterAssemblyTypes: []
+    - rid: 1457050938961035306
+      type: {class: IntBinding, ns: Coherence.Toolkit.Bindings.ValueBindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 1457050938961035307
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 54b682f9-0086-4960-adb2-6b783167eec3
+        archetypeData:
+          type: 1
+          minRange: -2147483648
+          maxRange: 2147483647
+          sampleRate: 20
+          floatCompression: 0
+          fields:
+          - type: 1
+            bits: 32
+            minRange: -2147483648
+            maxRange: 2147483647
+            precision: 0
+            floatCompression: 0
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 3658229590979758511}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 1457050938961035307
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: _internalFaction
+        monoAssemblyType: System.Int32, mscorlib
+        required: 1
+        enforcesLODingWhenFieldsOverriden: 1
+        valueSyncCallbackName: 
+        memberType: 4
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: WorldTree.GameState, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.ValueBindings.IntBinding,
+            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: Faction
+        oldParameterAssemblyTypes: []
+--- !u!114 &1702262954941262527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

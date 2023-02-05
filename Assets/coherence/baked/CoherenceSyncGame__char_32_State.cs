@@ -22,6 +22,80 @@ namespace Coherence.Generated
 	using Logger = Coherence.Log.Logger;
 	using UnityEngine.Scripting;
 
+	public class Binding_c4db98e625238cb4abed48cda8fae98e_31b842c4_16a3_4d4c_a723_eedf37551860 : IntBinding
+	{
+		private WorldTree.GameState CastedUnityComponent;		
+
+		protected override void OnBindingCloned()
+		{
+			CastedUnityComponent = (WorldTree.GameState)UnityComponent;
+		}
+		public override string CoherenceComponentName => "Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511";
+
+		public override uint FieldMask => 0b00000000000000000000000000000001;
+
+		public override int Value
+		{
+			get => (int)(System.Int32)(CastedUnityComponent.playerCount);
+			set => CastedUnityComponent.playerCount = (System.Int32)(value);
+		}
+
+		protected override int ReadComponentData(ICoherenceComponentData coherenceComponent)
+		{
+			var update = (Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511)coherenceComponent;
+			return update.playerCount;
+		}
+		
+		public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent)
+		{
+			var update = (Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511)coherenceComponent;
+			update.playerCount = Value;
+			return update;
+		}
+
+		public override ICoherenceComponentData CreateComponentData()
+		{
+			return new Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511();
+		}
+	}
+
+	public class Binding_c4db98e625238cb4abed48cda8fae98e_54b682f9_0086_4960_adb2_6b783167eec3 : IntBinding
+	{
+		private WorldTree.GameState CastedUnityComponent;		
+
+		protected override void OnBindingCloned()
+		{
+			CastedUnityComponent = (WorldTree.GameState)UnityComponent;
+		}
+		public override string CoherenceComponentName => "Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511";
+
+		public override uint FieldMask => 0b00000000000000000000000000000010;
+
+		public override int Value
+		{
+			get => (int)(System.Int32)(CastedUnityComponent._internalFaction);
+			set => CastedUnityComponent._internalFaction = (System.Int32)(value);
+		}
+
+		protected override int ReadComponentData(ICoherenceComponentData coherenceComponent)
+		{
+			var update = (Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511)coherenceComponent;
+			return update._internalFaction;
+		}
+		
+		public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent)
+		{
+			var update = (Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511)coherenceComponent;
+			update._internalFaction = Value;
+			return update;
+		}
+
+		public override ICoherenceComponentData CreateComponentData()
+		{
+			return new Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511();
+		}
+	}
+
 
 	[Preserve]
 	[AddComponentMenu("coherence/Baked/Baked 'Game State' (auto assigned)")]
@@ -42,6 +116,26 @@ namespace Coherence.Generated
 			coherenceSync.usingReflection = false;
 
 			logger = coherenceSync.logger.With<CoherenceSyncGame__char_32_State>();
+			if (coherenceSync.TryGetBindingByGuid("31b842c4-16a3-4d4c-a723-eedf37551860", "playerCount", out Binding InternalGame__char_32_State_WorldTree__char_46_GameState_3658229590979758511_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_playerCount))
+			{
+				var clone = new Binding_c4db98e625238cb4abed48cda8fae98e_31b842c4_16a3_4d4c_a723_eedf37551860();
+				InternalGame__char_32_State_WorldTree__char_46_GameState_3658229590979758511_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_playerCount.CloneTo(clone);
+				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalGame__char_32_State_WorldTree__char_46_GameState_3658229590979758511_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511_playerCount)] = clone;
+			}
+			else
+			{
+				logger.Error("Couldn't find binding (WorldTree.GameState).playerCount");
+			}
+			if (coherenceSync.TryGetBindingByGuid("54b682f9-0086-4960-adb2-6b783167eec3", "_internalFaction", out Binding InternalGame__char_32_State_WorldTree__char_46_GameState_3658229590979758511_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511__internalFaction))
+			{
+				var clone = new Binding_c4db98e625238cb4abed48cda8fae98e_54b682f9_0086_4960_adb2_6b783167eec3();
+				InternalGame__char_32_State_WorldTree__char_46_GameState_3658229590979758511_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511__internalFaction.CloneTo(clone);
+				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalGame__char_32_State_WorldTree__char_46_GameState_3658229590979758511_Game__char_32_State_WorldTree__char_46_GameState_3658229590979758511__internalFaction)] = clone;
+			}
+			else
+			{
+				logger.Error("Couldn't find binding (WorldTree.GameState)._internalFaction");
+			}
 		}
 
 		public override List<ICoherenceComponentData> CreateEntity()

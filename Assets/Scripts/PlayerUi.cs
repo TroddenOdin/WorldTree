@@ -37,7 +37,6 @@ public class PlayerUi : MonoBehaviour
         vikingCanvas.SetActive(false);
         factionPickingCanvas.SetActive(false);
         pauseMenuCanvas.SetActive(false);
-
     }
 
     
@@ -75,18 +74,35 @@ public class PlayerUi : MonoBehaviour
         vikingManaSlider.value = player.currentMana;
     }
 
-    public void ChooseWorldTree(bool worldTree = true)
+    public void ChooseWorldTree(bool worldTreeSelected = true)
     {
-        worldTreeCanvas.SetActive(worldTree);
-        vikingCanvas.SetActive(!worldTree);
         factionPickingCanvas.SetActive(false);
+        Faction faction;
 
-        OnFactionSelect.Invoke(worldTree ? Faction.Nature : Faction.Civilization);
+        if (GameState.instance.selectedFaction == Faction.Nature)
+        {
+            faction = Faction.Civilization;
+        }    
+        else if (GameState.instance.selectedFaction == Faction.Civilization)
+        {
+            faction = Faction.Nature;
+        }
+        else
+            faction = worldTreeSelected ? Faction.Nature : Faction.Civilization;
+
+
+        worldTreeCanvas.SetActive(faction == Faction.Nature);
+        vikingCanvas.SetActive(faction != Faction.Nature);
+
+        OnFactionSelect.Invoke(faction);
     }
 
     public void ShowFactionDialog()
     {
         factionPickingCanvas.SetActive(true);
+        Debug.Log(GameState.instance.selectedFaction);
+        if (GameState.instance.selectedFaction != Faction.Neutral)
+            factionPickingCanvas.transform.GetChild(0).GetChild(GameState.instance.selectedFaction == Faction.Nature ? 1 : 2).gameObject.SetActive(false);
     }
 
     public void ShowPauseMenu()
@@ -122,7 +138,6 @@ public class PlayerUi : MonoBehaviour
         {
             ShowPauseMenu();
         }
-
     }   
     
     

@@ -1,3 +1,5 @@
+using Coherence.Runtime;
+using Coherence.Toolkit;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,34 +9,42 @@ namespace WorldTree
     public class GameState : MonoBehaviour
     {
         public static GameState instance { get; private set; }
-        private int _playerCount;
+        [Sync("PlayerCount")]
+        public int playerCount;
         public GamePlayState currentState { get; private set; }
+        [Sync("Faction")]
+        public int _internalFaction;
+        public Faction selectedFaction => (Faction)_internalFaction;
 
         private void Start()
         {
-            if(instance == null) instance = this;
+            if (instance == null) instance = this;
+            else Destroy(gameObject);
 
             if (transform.parent != null)
                 transform.parent = null;
 
-            _playerCount = 0;
+            playerCount = 0;
             currentState = GamePlayState.WaitingForPlayer;
+            _internalFaction = (int)Faction.Neutral;
         }
 
-        public int PlayerConnect()
+        public void PlayerConnect()
         {
-            ++_playerCount;
-            Debug.Log(_playerCount);
-
-            return _playerCount;
+            ++playerCount;
+            Debug.Log(playerCount);
         }
 
-        public int PlayerDisconnect()
+        public void PlayerDisconnect()
         {
-            --_playerCount;
-            Debug.Log(_playerCount);
+            --playerCount;
+            Debug.Log(playerCount);
+        }
 
-            return _playerCount;
+        public void PlayerSelectFaction(Faction faction)
+        {
+            if(selectedFaction == Faction.Neutral)
+                _internalFaction = (int)faction;
         }
     }
 }
