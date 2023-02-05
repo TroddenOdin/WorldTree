@@ -36,21 +36,5 @@ namespace WorldTree
             _player = GetComponent<Player>();
             _player.SetFaction(_faction);
         }
-
-        [SerializeField]
-        private GameObject _soldierPrefabNature;
-        [SerializeField]
-        private GameObject _soldierPrefabCivilization;
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                Instantiate(_faction == Faction.Nature ? _soldierPrefabNature : _soldierPrefabCivilization);
-            }
-        }
-        /* Another Queejon to-do list:
-         * 
-         * Fix faction buttons
-         */
     }
 }
