@@ -134,6 +134,8 @@ namespace WorldTree
         public void Heal(float health)
         {
             _currentHealth += health;
+
+            if (_currentHealth > _stats.health) _currentHealth = _stats.health;
         }
 
         public void Die()

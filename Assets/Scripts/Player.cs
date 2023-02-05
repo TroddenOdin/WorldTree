@@ -23,6 +23,9 @@ namespace WorldTree
         private Faction _faction;
         public Faction faction => _faction;
 
+        [SerializeField]
+        private RootsManager _roots;
+
         public Button treeUnitButton1;
         public Button treeUnitButton2;
         public Button treeUnitButton3;
@@ -122,9 +125,22 @@ namespace WorldTree
         }
         public void TreeAbilityButton1()
         {
+            if(_roots.TogglePlacing())
+            {
+                treeAbilityButton1.GetComponent<RectTransform>().localScale *= 1.25f;
+            }
+            else
+            {
+                treeAbilityButton1.GetComponent<RectTransform>().localScale *= 0.8f;
+            }
+        }
+
+        public void TreeGrow()
+        {
             currentMana -= treeAbilityMana[0];
             playerUi.SetMana();
         }
+
         public void TreeAbilityButton2()
         {
             currentMana -= treeAbilityMana[1];

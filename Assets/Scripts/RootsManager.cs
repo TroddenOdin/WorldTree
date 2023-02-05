@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace WorldTree
 {
@@ -10,6 +11,8 @@ namespace WorldTree
         private GameObject _rootPrefab;
         private Unit _unit;
         private Vector3 _targetPos;
+        private bool _placing;
+        public UnityEvent<Unit> OnPlace;
 
         private Ray _ray;
         private RaycastHit _raycastHit;
@@ -19,15 +22,34 @@ namespace WorldTree
             _unit = _rootPrefab.GetComponent<Unit>();
         }
 
-        public void BeginPlacePreview()
+        public void SetFaction(Faction faction)
         {
-            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(_ray, out _raycastHit, 1000f))
+            if (faction != Faction.Nature)
+                Destroy(this);
+        }
+
+        private void Update()
+        {
+            if(_placing && Input.GetMouseButtonDown(0))
             {
-                if (_raycastHit.transform.tag == "Ground")
-                    _targetPos = _raycastHit.point;
-                Debug.Log(_targetPos);
+                _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(_ray, out _raycastHit, 1000f))
+                {
+                    Debug.Log(_raycastHit.transform.gameObject.layer);
+                    if (_raycastHit.transform.gameObject.layer == 6)
+                    {
+                        _targetPos = _raycastHit.point;
+                        Unit root = null;
+                        OnPlace.Invoke(root);
+                    } 
+                }
             }
+        }
+
+        public bool TogglePlacing()
+        {
+            _placing = !_placing;
+            return _placing;
         }
     }
 }
