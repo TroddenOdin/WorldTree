@@ -48,6 +48,8 @@ namespace WorldTree
         public void Select() { Select(false, false); }
         public void Select(bool singleClick, bool holdingShift)
         {
+            if (_unit.stats.unitName == "Root") return;
+
             // basic case: using the selection box
             if (!singleClick)
             {

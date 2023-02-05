@@ -16,7 +16,7 @@ namespace Coherence.Generated
 
 	public class Definition : IDefinition
 	{
-		public const string schemaId = "cd5c7147ae7e919f622b9cf91056dc5d7da72a1c";
+		public const string schemaId = "fe53090b7f0f6ed5990c6f77e589f5edcac5e07d";
 		public const uint InternalWorldPosition = 0;
 		public const uint InternalWorldOrientation = 1;
 		public const uint InternalLocalUser = 2;
@@ -127,8 +127,10 @@ namespace Coherence.Generated
 		public const uint InternalArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0 = 107;
 		public const uint InternalArchetypeNature__char_32_Heavy__char_32_Variant_dd38866812d1bce4aa8d2e7510ef67da_WorldPosition_LOD0 = 108;
 		public const uint InternalArchetypeNature__char_32_Light_f5f713d3176c77b4f920cfde027d7ef2_WorldPosition_LOD0 = 109;
-		public const uint InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0 = 110;
-		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 111;
+		public const uint InternalArchetypeNature__char_32_Soldier__char_32_Root_b99ef501240844f4da7adafafa09bf3f_WorldPosition_LOD0 = 110;
+		public const uint InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0 = 111;
+		public const uint InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0 = 112;
+		public const uint InternalArchetypeWorld__char_32_Tree_6d562ed2af189a44b98e94efa91a7994_WorldPosition_LOD0 = 113;
 		public const uint InternalAuthorityRequest = 0;
 		public const uint InternalAuthorityTransfer = 1;
 		public const uint InternalQuerySynced = 2;
@@ -247,8 +249,10 @@ namespace Coherence.Generated
 			{ 107, "ArchetypeCivilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc_WorldPosition_LOD0" },
 			{ 108, "ArchetypeNature__char_32_Heavy__char_32_Variant_dd38866812d1bce4aa8d2e7510ef67da_WorldPosition_LOD0" },
 			{ 109, "ArchetypeNature__char_32_Light_f5f713d3176c77b4f920cfde027d7ef2_WorldPosition_LOD0" },
-			{ 110, "ArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0" },
-			{ 111, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
+			{ 110, "ArchetypeNature__char_32_Soldier__char_32_Root_b99ef501240844f4da7adafafa09bf3f_WorldPosition_LOD0" },
+			{ 111, "ArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0" },
+			{ 112, "ArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0" },
+			{ 113, "ArchetypeWorld__char_32_Tree_6d562ed2af189a44b98e94efa91a7994_WorldPosition_LOD0" },
 		};
 
 		public static string ComponentNameForTypeId(uint typeId)
@@ -490,10 +494,14 @@ namespace Coherence.Generated
 					return WorldPosition.DeserializeArchetypeNature__char_32_Heavy__char_32_Variant_dd38866812d1bce4aa8d2e7510ef67da_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeNature__char_32_Light_f5f713d3176c77b4f920cfde027d7ef2_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeNature__char_32_Light_f5f713d3176c77b4f920cfde027d7ef2_WorldPosition_LOD0(inProtocolStream);
+				case InternalArchetypeNature__char_32_Soldier__char_32_Root_b99ef501240844f4da7adafafa09bf3f_WorldPosition_LOD0:
+					return WorldPosition.DeserializeArchetypeNature__char_32_Soldier__char_32_Root_b99ef501240844f4da7adafafa09bf3f_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeNature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeSoldier_f8c53656e690229449e63505503f1a5b_WorldPosition_LOD0(inProtocolStream);
+				case InternalArchetypeWorld__char_32_Tree_6d562ed2af189a44b98e94efa91a7994_WorldPosition_LOD0:
+					return WorldPosition.DeserializeArchetypeWorld__char_32_Tree_6d562ed2af189a44b98e94efa91a7994_WorldPosition_LOD0(inProtocolStream);
 				default:
 					return (null, 0, 0);
 			}

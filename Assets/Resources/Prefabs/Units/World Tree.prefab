@@ -1,32 +1,47 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8404416482376424040
+--- !u!1001 &4704890034804838968
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4001669039732281439, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: -3470946086667505742, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: PrefabGuid
-      value: d6a82c87e5905cf4da2d7816df59e943
+      value: 6d562ed2af189a44b98e94efa91a7994
       objectReference: {fileID: 0}
     - target: {fileID: -3470946086667505742, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: bakedScriptType
-      value: Coherence.Generated.CoherenceSyncNature__char_32_Soldier__char_32_Variant,
-        Assembly-CSharp
+      value: Coherence.Generated.CoherenceSyncWorld__char_32_Tree, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: -3470946086667505742, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: archetype.archetypeName
-      value: Nature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943
+      value: World__char_32_Tree_6d562ed2af189a44b98e94efa91a7994
       objectReference: {fileID: 0}
     - target: {fileID: -3470946086667505742, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: remoteVersionPrefabName
-      value: Prefabs/Units/Nature Soldier Variant
+      value: Prefabs/Units/World Tree
       objectReference: {fileID: 0}
     - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68,6 +83,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5921134435652645909, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -75,14 +94,14 @@ PrefabInstance:
     - target: {fileID: 5921134435652645910, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: _stats
       value: 
-      objectReference: {fileID: 11400000, guid: a0c40db9eea51224c81e8bef111ea948, type: 2}
+      objectReference: {fileID: 11400000, guid: db2b05f8a18670943b08c31423129b1d, type: 2}
     - target: {fileID: 5921134435652645911, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: m_BaseOffset
       value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 5921134435652645913, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: m_Name
-      value: Nature Soldier Variant
+      value: World Tree
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c53656e690229449e63505503f1a5b, type: 3}

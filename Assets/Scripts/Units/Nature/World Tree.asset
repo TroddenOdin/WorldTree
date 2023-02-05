@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b75f63ffc508c8445b898fa3d0801b43, type: 3}
-  m_Name: Nature Heavy
+  m_Name: World Tree
   m_EditorClassIdentifier: 
-  unitName: Heavy
+  unitName: Light
   faction: 0
-  cost: 45
-  moveSpeed: 1
-  attackPower: 15
-  attackSpeed: 2
-  agressionRadius: 7
-  attackRadius: 2
-  health: 150
+  cost: 0
+  moveSpeed: 0
+  attackPower: 0
+  attackSpeed: 0
+  agressionRadius: 0
+  attackRadius: 0
+  health: 45

@@ -15,9 +15,9 @@ MonoBehaviour:
   unitName: Light
   faction: 0
   cost: 20
-  moveSpeed: 5
-  attackPower: 5
-  attackSpeed: 2
+  moveSpeed: 3
+  attackPower: 7
+  attackSpeed: 1
   agressionRadius: 7
-  attackRadius: 2
+  attackRadius: 4
   health: 45
