@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: remoteVersionPrefabName
       value: Prefabs/Units/World Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 5921134435652645906, guid: f8c53656e690229449e63505503f1a5b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 777458791121024641, guid: 5871a40187a8722489b4e8bb5fad4fde, type: 3}
     - target: {fileID: 5921134435652645907, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -90,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 5921134435652645909, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fd5a358e49ef0d94b88c47f6dd652992, type: 2}
+      objectReference: {fileID: 2100000, guid: f6cb680d83d87304c94a7eca6cc64529, type: 2}
     - target: {fileID: 5921134435652645910, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: _stats
       value: 
