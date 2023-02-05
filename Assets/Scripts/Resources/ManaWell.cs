@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace WorldTree
 {
@@ -31,6 +32,10 @@ namespace WorldTree
         private Material _civilizationMat;
         private MeshRenderer _renderer;
 
+        [SerializeField] private GameObject progressBarPrefab;
+        private GameObject progressBar = null;
+
+
         private void Start()
         {
             manaWells.Add(this);
@@ -46,6 +51,8 @@ namespace WorldTree
             _claimCounts = new();
             _claimCounts[Faction.Nature] = 0;
             _claimCounts[Faction.Civilization] = 0;
+
+            progressBar = ProgressBarContainer.progressBarContainer.CreateProgressBar(progressBarPrefab);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -103,6 +110,22 @@ namespace WorldTree
             {
                 _currentClaim = _claimTotal;
             }
+
+            if (transform.GetChild(0).GetComponent<Renderer>().isVisible)
+            {
+                progressBar.GetComponent<Image>().enabled = true;
+                progressBar.GetComponent<Image>().fillAmount = _currentClaim / _claimTotal;
+                progressBar.transform.position = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 25f;
+            }
+            else
+            {
+                progressBar.GetComponent<Image>().enabled = false;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            Destroy(progressBar);
         }
     }
 }

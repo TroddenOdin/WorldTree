@@ -38,7 +38,6 @@ public class MapAreascapturingUI : MonoBehaviour
         {
             progressImage.fillAmount = mapArea.GetProgress();
             progressImage.fillAmount = mapArea.GetDEFProgress();
-
         }
         private void MapArea_OnPlayerExit(object sender, EventArgs e)
         {
