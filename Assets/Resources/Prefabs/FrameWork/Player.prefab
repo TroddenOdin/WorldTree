@@ -45,12 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001b5e91beb4be241bdd32bb115c5b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _faction: 2
+  _faction: 1
   _selections: {fileID: 0}
   _movement: {fileID: 0}
   _cameraController: {fileID: 0}
-  _soldierPrefabNature: {fileID: 2778268138533596785, guid: d6a82c87e5905cf4da2d7816df59e943, type: 3}
-  _soldierPrefabCivilization: {fileID: 7307297407339302485, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
 --- !u!114 &3551402878642391742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,22 +65,26 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   minHealth: 0
-  playerDamage: 25
   currentMana: 100
   maxMana: 100
   minMana: 0
-  worldTreeAbility1: {fileID: 0}
-  worldTreeAbility2: {fileID: 0}
-  worldTreeAbility3: {fileID: 0}
-  worldTreeAbility4: {fileID: 0}
-  worldTreeAbility5: {fileID: 0}
-  worldTreeAbility6: {fileID: 0}
-  worldTreeAbility7: {fileID: 0}
-  worldTreeAbility8: {fileID: 0}
-  vikingAbility1: {fileID: 0}
-  vikingAbility2: {fileID: 0}
-  vikingAbility3: {fileID: 0}
-  vikingAbility4: {fileID: 0}
-  vikingAbility5: {fileID: 0}
-  vikingAbility6: {fileID: 0}
-  vikingAbility7: {fileID: 0}
+  treeUnitButton1: {fileID: 0}
+  treeUnitButton2: {fileID: 0}
+  treeUnitButton3: {fileID: 0}
+  treeAbilityButton1: {fileID: 0}
+  treeAbilityButton2: {fileID: 0}
+  vikingUnitButton1: {fileID: 0}
+  vikingUnitButton2: {fileID: 0}
+  vikingUnitButton3: {fileID: 0}
+  vikingAbilityButton1: {fileID: 0}
+  vikingAbilityButton2: {fileID: 0}
+  treeAbilityMana: 3200000019000000
+  vikingAbilityMana: 3200000019000000
+  _treeUnitPrefabs:
+  - {fileID: 1398148790480397857, guid: f5f713d3176c77b4f920cfde027d7ef2, type: 3}
+  - {fileID: 2126955608179999888, guid: dd38866812d1bce4aa8d2e7510ef67da, type: 3}
+  - {fileID: 0}
+  _vikingUnitPrefabs:
+  - {fileID: 5294007384742915780, guid: bb54ffb313b3d8f469e6bd74a5b516ea, type: 3}
+  - {fileID: 5770927871306286960, guid: d7c04ef63a943534b97ce61c8f80c54f, type: 3}
+  - {fileID: 0}

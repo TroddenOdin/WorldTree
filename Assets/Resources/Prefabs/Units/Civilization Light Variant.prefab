@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3175226768964640913
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7307297407339302485, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_Name
+      value: Civilization Light Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302490, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 024a6d2b8d5da5b48ba2568ea9a3fd62, type: 2}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307297407339302495, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687475360429348350, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: PrefabGuid
+      value: bb54ffb313b3d8f469e6bd74a5b516ea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687475360429348350, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: bakedScriptType
+      value: Coherence.Generated.CoherenceSyncCivilization__char_32_Light__char_32_Variant,
+        Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687475360429348350, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: archetype.archetypeName
+      value: Civilization__char_32_Light__char_32_Variant_bb54ffb313b3d8f469e6bd74a5b516ea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687475360429348350, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}
+      propertyPath: remoteVersionPrefabName
+      value: Prefabs/Units/Civilization Light Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7a82f6c353d52d4397768ab8f734fbc, type: 3}

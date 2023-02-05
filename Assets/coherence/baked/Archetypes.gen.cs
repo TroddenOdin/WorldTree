@@ -11,18 +11,30 @@ namespace Coherence.Generated
 	public static class Archetypes
 	{
 		public const int Game__char_32_State_c4db98e625238cb4abed48cda8fae98eIndex = 0;
-		public const int Civilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbcIndex = 1;
-		public const int Nature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943Index = 2;
-		public const int Soldier_f8c53656e690229449e63505503f1a5bIndex = 3;
+		public const int Civilization__char_32_Heavy__char_32_Variant_d7c04ef63a943534b97ce61c8f80c54fIndex = 1;
+		public const int Civilization__char_32_Light__char_32_Variant_bb54ffb313b3d8f469e6bd74a5b516eaIndex = 2;
+		public const int Civilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbcIndex = 3;
+		public const int Nature__char_32_Heavy__char_32_Variant_dd38866812d1bce4aa8d2e7510ef67daIndex = 4;
+		public const int Nature__char_32_Light_f5f713d3176c77b4f920cfde027d7ef2Index = 5;
+		public const int Nature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943Index = 6;
+		public const int Soldier_f8c53656e690229449e63505503f1a5bIndex = 7;
 
 		public static Dictionary<string, int> IndexForName = new Dictionary<string, int>() {
 			{ "Game__char_32_State_c4db98e625238cb4abed48cda8fae98e", 0 },
 
-			{ "Civilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc", 1 },
+			{ "Civilization__char_32_Heavy__char_32_Variant_d7c04ef63a943534b97ce61c8f80c54f", 1 },
 
-			{ "Nature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943", 2 },
+			{ "Civilization__char_32_Light__char_32_Variant_bb54ffb313b3d8f469e6bd74a5b516ea", 2 },
 
-			{ "Soldier_f8c53656e690229449e63505503f1a5b", 3 },
+			{ "Civilization__char_32_Soldier__char_32_Variant_b7a82f6c353d52d4397768ab8f734fbc", 3 },
+
+			{ "Nature__char_32_Heavy__char_32_Variant_dd38866812d1bce4aa8d2e7510ef67da", 4 },
+
+			{ "Nature__char_32_Light_f5f713d3176c77b4f920cfde027d7ef2", 5 },
+
+			{ "Nature__char_32_Soldier__char_32_Variant_d6a82c87e5905cf4da2d7816df59e943", 6 },
+
+			{ "Soldier_f8c53656e690229449e63505503f1a5b", 7 },
 
 		};
 	}

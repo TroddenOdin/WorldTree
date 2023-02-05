@@ -62,7 +62,25 @@ MonoBehaviour:
   vikingManaSlider: {fileID: 6280253947534152650}
   fillTweeningCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -240,10 +258,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3176671454723549796, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: _faction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3176671454723549796, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: _movement
       value: 
       objectReference: {fileID: 2459348348717683019}
@@ -259,34 +273,6 @@ PrefabInstance:
       propertyPath: playerUi
       value: 
       objectReference: {fileID: 5898767595201318945}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: vikingAbility1
-      value: 
-      objectReference: {fileID: 6280253947340442919}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: vikingAbility2
-      value: 
-      objectReference: {fileID: 6280253946272047189}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: vikingAbility3
-      value: 
-      objectReference: {fileID: 6280253946203484228}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: vikingAbility4
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: vikingAbility5
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: vikingAbility6
-      value: 
-      objectReference: {fileID: 6280253947051045343}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: vikingAbility7
-      value: 
-      objectReference: {fileID: 6280253947712727346}
     - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: treeUnitButton1
       value: 
@@ -312,38 +298,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6280253946203484228}
     - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: worldTreeAbility1
-      value: 
-      objectReference: {fileID: 6280253945831421513}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: worldTreeAbility2
-      value: 
-      objectReference: {fileID: 6280253947807372034}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: worldTreeAbility3
-      value: 
-      objectReference: {fileID: 6280253947272001864}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: worldTreeAbility4
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: worldTreeAbility5
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: worldTreeAbility6
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: worldTreeAbility7
-      value: 
-      objectReference: {fileID: 6280253945829043633}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: worldTreeAbility8
-      value: 
-      objectReference: {fileID: 6280253946354801368}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
       propertyPath: treeAbilityButton1
       value: 
       objectReference: {fileID: 6280253945829043633}
@@ -359,14 +313,6 @@ PrefabInstance:
       propertyPath: vikingAbilityButton2
       value: 
       objectReference: {fileID: 6280253947712727346}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: treeManaUsageAmount.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3551402878642391742, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
-      propertyPath: vikingManaUsageAmount.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0a4b4641720deb4c85a8faaba398bf8, type: 3}
 --- !u!4 &5898767593531813966 stripped
@@ -403,6 +349,78 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5898767595201318946}
     m_Modifications:
+    - target: {fileID: 503084221062422453, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8802278226113716469}
+    - target: {fileID: 503084221062422453, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VikingUnitButton3
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084221062422453, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldTree.Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084221137014692, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8802278226113716469}
+    - target: {fileID: 503084221137014692, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VikingUnitButton2
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084221137014692, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldTree.Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084221562159680, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8802278226113716469}
+    - target: {fileID: 503084221562159680, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TreeAbilityButton1
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084221562159680, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldTree.Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084221568735672, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8802278226113716469}
+    - target: {fileID: 503084221568735672, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TreeUnitButton1
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084221568735672, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldTree.Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222018925865, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8802278226113716469}
+    - target: {fileID: 503084222018925865, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TreeAbilityButton2
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222018925865, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldTree.Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222133032633, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8802278226113716469}
+    - target: {fileID: 503084222133032633, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TreeUnitButton3
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222133032633, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldTree.Player, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 503084222198535959, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -410,6 +428,30 @@ PrefabInstance:
     - target: {fileID: 503084222198535959, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222199325398, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8802278226113716469}
+    - target: {fileID: 503084222199325398, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VikingUnitButton1
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222199325398, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldTree.Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222513897006, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8802278226113716469}
+    - target: {fileID: 503084222513897006, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VikingAbilityButton1
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222513897006, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldTree.Player, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 503084222590887570, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
       propertyPath: m_RootOrder
@@ -463,6 +505,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5898767595201318945}
+    - target: {fileID: 503084222672420083, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8802278226113716469}
+    - target: {fileID: 503084222672420083, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TreeUnitButton2
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222672420083, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldTree.Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222909171395, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8802278226113716469}
+    - target: {fileID: 503084222909171395, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VikingAbilityButton2
+      objectReference: {fileID: 0}
+    - target: {fileID: 503084222909171395, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldTree.Player, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 783221419788621830, guid: 8a6e936f666488c48b740bb20d5a90de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
