@@ -9,7 +9,8 @@ namespace WorldTree
     {
         private static UnitMovement _instance;
         public static UnitMovement Instance => _instance;
-        Camera cam;
+        [SerializeField]
+        private Camera cam;
         public LayerMask ground;
         private static List<UnitManager> _units => Globals.UNITS;
         private static List<UnitManager> _selectedUnits => Globals.SELECTED_UNITS;
@@ -24,8 +25,6 @@ namespace WorldTree
                 _instance = this;
             else
                 Destroy(this);
-
-            cam = Camera.main;
         }
 
         //cached for function

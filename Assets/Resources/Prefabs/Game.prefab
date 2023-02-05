@@ -900,6 +900,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54bea3c83a09d8949833dad8ccd40102, type: 3}
+--- !u!20 &1841070904030707976 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5210785595002791275, guid: 54bea3c83a09d8949833dad8ccd40102, type: 3}
+  m_PrefabInstance: {fileID: 5898767593779749987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1841070904030707983 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5210785595002791276, guid: 54bea3c83a09d8949833dad8ccd40102, type: 3}
@@ -1006,6 +1011,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5898767595201318946}
     m_Modifications:
+    - target: {fileID: 8358115298954420976, guid: 4ea43a1f8f118224bab87ff6ea7f8dc4, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1841070904030707976}
     - target: {fileID: 8358115298954420976, guid: 4ea43a1f8f118224bab87ff6ea7f8dc4, type: 3}
       propertyPath: _terrain
       value: 
