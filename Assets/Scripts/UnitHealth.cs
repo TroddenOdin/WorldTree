@@ -14,6 +14,8 @@ namespace WorldTree
 
         private Unit _unit;
 
+        private Renderer _cachedRenderer = null;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -30,7 +32,8 @@ namespace WorldTree
         // Update is called once per frame
         void Update()
         {
-            if (GetComponent<Renderer>().isVisible)
+            _cachedRenderer ??= transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Renderer>();
+            if (_cachedRenderer.isVisible)
             {
                 _healthBar.SetActive(true);
                 _healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 25f;
