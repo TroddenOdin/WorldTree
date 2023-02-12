@@ -68,6 +68,7 @@ namespace WorldTree
             else if (currentMana < 0) currentMana = 0;
 
             if (currentHealth > maxHealth) currentHealth = maxHealth;
+            playerUi.SetHealth();
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {

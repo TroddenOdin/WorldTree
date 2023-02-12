@@ -20,4 +20,4 @@ MonoBehaviour:
   attackSpeed: 0
   agressionRadius: 0
   attackRadius: 0
-  health: 45
+  health: 1000

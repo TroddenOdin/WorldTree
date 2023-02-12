@@ -10,17 +10,23 @@ namespace WorldTree
     public class GameState : MonoBehaviour
     {
         public static GameState instance { get; private set; }
-        [Sync("PlayerCount")]
+        [Sync("PlayerCount"), HideInInspector]
         public int playerCount;
         public GamePlayState currentState { get; private set; }
-        [Sync("Faction")]
+        [Sync("Faction"), HideInInspector]
         public int _internalFaction;
         public Faction selectedFaction => (Faction)_internalFaction;
 
-        private Player naturePlayer;
+        private Player _naturePlayer;
+        [SerializeField]
+        private Unit _worldTree;
 
-        [SerializeField] private GameObject loseScreen;
-        [SerializeField] private GameObject winScreen;
+        [SerializeField]
+        private GameObject _gameOverScreen;
+        [SerializeField] 
+        private GameObject _loseText;
+        [SerializeField] 
+        private GameObject _winText;
 
         bool gameFinished = false;
 
@@ -35,31 +41,42 @@ namespace WorldTree
             playerCount = 0;
             currentState = GamePlayState.WaitingForPlayer;
             _internalFaction = (int)Faction.Neutral;
+
+            _worldTree.OnDamage.AddListener(UpdateNaturePlayerHealth);
         }
 
         private void Update()
         {
-            if(naturePlayer && !gameFinished)
+            if(_naturePlayer && !gameFinished)
             {
-                if(naturePlayer.currentHealth <= 0f)
+                if(_naturePlayer.currentHealth <= 0f)
                 {
-                    loseScreen.SetActive(true);
+                    _gameOverScreen.SetActive(true);
+                    _loseText.SetActive(true);
                     gameFinished = true;
                 }
 
                 if(ManaWell.manaWells.Where(well => well.allegiance == Faction.Nature).Count() >= ManaWell.manaWells.Count - 1)
                 {
-                    winScreen.SetActive(true);
+                    _gameOverScreen.SetActive(true);
+                    _winText.SetActive(true);
                     gameFinished = true;
                 }
             }
+        }
+
+        public void UpdateNaturePlayerHealth(Unit unit)
+        {
+            if (!_naturePlayer) return;
+
+            _naturePlayer.currentHealth = unit.currentHealth / unit.stats.health * _naturePlayer.maxHealth;
         }
 
         public void HandleNewPlayer(Player player)
         {
             if(player.faction == Faction.Nature)
             {
-                naturePlayer = player;
+                _naturePlayer = player;
             }
         }
 
@@ -77,6 +94,8 @@ namespace WorldTree
         {
             if(selectedFaction == Faction.Neutral)
                 _internalFaction = (int)faction;
+            if (faction == Faction.Nature)
+                _naturePlayer = GameObject.FindObjectsOfType<Player>().Where(player => player.faction == Faction.Nature).First();
         }
     }
 }

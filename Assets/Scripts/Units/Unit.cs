@@ -26,6 +26,8 @@ namespace WorldTree
         public UnityEvent<Unit> OnCreate;
         [HideInInspector]
         public UnityEvent<Unit> OnSetTarget;
+        
+        public UnityEvent<Unit> OnDamage;
         [HideInInspector]
         public UnityEvent<Unit> OnDeath;
         [HideInInspector]
@@ -95,7 +97,8 @@ namespace WorldTree
 
         private void SetSpeed()
         {
-            _meshAgent.speed = _stats.moveSpeed * UnitMovement.Instance.terrain[transform.position].moveMultiplier; 
+            if(_stats.moveSpeed > 0)
+                _meshAgent.speed = _stats.moveSpeed * UnitMovement.Instance.terrain[transform.position].moveMultiplier; 
         }
 
         private void GetTarget()
@@ -127,6 +130,7 @@ namespace WorldTree
         public void Damage(float damage)
         {
             _currentHealth -= damage;
+            OnDamage.Invoke(this);
             if (_currentHealth <= 0)
                 Die();
         }

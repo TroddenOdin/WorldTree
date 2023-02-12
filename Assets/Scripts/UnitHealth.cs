@@ -14,8 +14,6 @@ namespace WorldTree
 
         private Unit _unit;
 
-        private Renderer _cachedRenderer = null;
-
         // Start is called before the first frame update
         void Start()
         {
@@ -32,17 +30,10 @@ namespace WorldTree
         // Update is called once per frame
         void Update()
         {
-            _cachedRenderer ??= transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Renderer>();
-            if (_cachedRenderer.isVisible)
-            {
-                _healthBar.SetActive(true);
-                _healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 25f;
-                _slider.value = _unit.currentHealth;
-            }
-            else
-            {
-                _healthBar.SetActive(false);
-            }
+            _healthBar.SetActive(true);
+            _healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 25f;
+            _slider.value = _unit.currentHealth;
+            _healthBar.SetActive(false);
         }
 
         private void OnDestroy()
