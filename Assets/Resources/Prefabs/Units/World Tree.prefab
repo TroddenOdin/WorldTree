@@ -98,7 +98,7 @@ PrefabInstance:
     - target: {fileID: 5921134435652645910, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: _stats
       value: 
-      objectReference: {fileID: 11400000, guid: db2b05f8a18670943b08c31423129b1d, type: 2}
+      objectReference: {fileID: 11400000, guid: 79e9f90fb1a36a14798aa3f9269d98c4, type: 2}
     - target: {fileID: 5921134435652645911, guid: f8c53656e690229449e63505503f1a5b, type: 3}
       propertyPath: m_BaseOffset
       value: 1.1
