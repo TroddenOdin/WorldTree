@@ -51,6 +51,8 @@ namespace WorldTree
             {
                 if(_naturePlayer.currentHealth <= 0f)
                 {
+                    GameObject.Find("WorldTreeCanvas")?.SetActive(false);
+                    GameObject.Find("VikingCanvas")?.SetActive(false);
                     _gameOverScreen.SetActive(true);
                     _loseText.SetActive(true);
                     gameFinished = true;
@@ -58,6 +60,8 @@ namespace WorldTree
 
                 if(ManaWell.manaWells.Where(well => well.allegiance == Faction.Nature).Count() >= ManaWell.manaWells.Count - 1)
                 {
+                    GameObject.Find("WorldTreeCanvas")?.SetActive(false);
+                    GameObject.Find("VikingCanvas")?.SetActive(false);
                     _gameOverScreen.SetActive(true);
                     _winText.SetActive(true);
                     gameFinished = true;
